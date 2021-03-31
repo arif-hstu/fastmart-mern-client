@@ -1,5 +1,6 @@
 .NavBar {
 	background-color: white;
+	height: 1.7rem;
 
 	/*grid*/
 	display: grid;

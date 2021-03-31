@@ -14,16 +14,18 @@ function SearchBar() {
 
 	return (
 		<div className='SearchBar'>
-			<img src={logo} alt="" />
+			<Link to='/'>
+				<img src={logo} alt="" />
+			</Link>
 			<input type="button" value="" />
 			<Link><FavoriteBorderOutlinedIcon style={{ color: 'white' }} /></Link>
 			<div className="cartIcon">
-				<Link><ShoppingCartOutlinedIcon style={{ color: 'white' }} /></Link>
+				<Link to='/checkout'><ShoppingCartOutlinedIcon style={{ color: 'white' }} /></Link>
 				<p className="cartCounter">
 					{cart.length}
 				</p>
 			</div>
-			<Link><PermIdentityIcon style={{ color: 'white' }} /><span className="loginInfo">Login</span></Link>
+			<Link ><PermIdentityIcon style={{ color: 'white' }} /><span className="loginInfo">Login</span></Link>
 		</div>
 	)
 }

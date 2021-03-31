@@ -1,0 +1,40 @@
+.OrderSummary {
+	display: grid;
+	grid-template-rows: 4rem 10% 20% 30% 20% 10%;  
+	grid-template-areas: 
+	'heading'
+	'items'
+	'shipping'
+	'promoCode'
+	'total'
+	'button';
+}
+
+.OrderSummary .heading {
+	grid-area: heading;
+}
+
+.OrderSummary .items {
+	grid-area: items;
+	display: flex;
+	justify-content: space-between;
+}
+
+.OrderSummary .shipping {
+	grid-area: shipping;
+}
+
+.OrderSummary .promoCode {
+	grid-area: promoCode;
+}
+
+.OrderSummary .total {
+	grid-area: total;
+	display: flex;
+	justify-content: space-between;
+}
+
+.OrderSummary .btn {
+	grid-area: button;
+	width: 40%;
+}

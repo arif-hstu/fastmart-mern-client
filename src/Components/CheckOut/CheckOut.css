@@ -1,0 +1,15 @@
+.CheckOut {
+	height: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas: 
+	'cart cart summary';
+}
+
+.CheckOut > *:first-child {
+	grid-area: cart;
+}
+
+.CheckOut > *:last-child {
+	grid-area: summary;
+}

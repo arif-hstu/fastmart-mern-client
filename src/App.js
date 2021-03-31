@@ -1,9 +1,10 @@
 import React, { createContext, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import axios from 'axios'
-import Home from './Components/Home/Home'
-import Admin from './Components/Admin/Admin'
+import axios from 'axios';
+import Home from './Components/Home/Home';
+import Admin from './Components/Admin/Admin';
+import CheckOut from './Components/CheckOut/CheckOut';
 import {
   BrowserRouter as Router,
   Switch,
@@ -64,6 +65,9 @@ function App() {
           </Route>
           <Route exact path='/admin/:adminDestination'>
             <Admin />
+          </Route>
+          <Route exact path='/checkout'>
+            <CheckOut />
           </Route>
         </Switch>
       </Router>
