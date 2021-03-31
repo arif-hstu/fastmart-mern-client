@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import axios from 'axios'
 import Home from './Components/Home/Home'
+import Admin from './Components/Admin/Admin'
 import {
   BrowserRouter as Router,
   Switch,
@@ -53,8 +54,11 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route path='/'>
-          <Home />
+          <Route exact path='/'>
+            <Home />
+          </Route>
+          <Route exact path='/admin'>
+            <Admin />
           </Route>
         </Switch>
       </Router>

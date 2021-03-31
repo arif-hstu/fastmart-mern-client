@@ -1,0 +1,20 @@
+.Dashboard {
+	/*height: 100vh;*/
+	display: grid;
+	grid-template-rows: 3rem 2rem auto 2rem;
+	grid-template-columns: 2rem auto 2rem;
+	grid-template-areas: 
+	'DashboardHeader DashboardHeader DashboardHeader'
+	'. . .'
+	'. DashboardPanel .'
+	'. . .'
+
+}
+
+.Dashboard > *:first-of-type{
+	grid-area: DashboardHeader;
+}
+
+.Dashboard > *:last-of-type {
+	grid-area: DashboardPanel;
+}

@@ -5,7 +5,7 @@
 	padding-bottom: 3rem;
 	/*grid*/
 	display: grid;
-	grid-template-columns: 0.7fr 1fr 1fr 0.7fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-template-rows: 10rem;
 	grid-template-areas: 
 	'. imageHolder infoHolder .';
@@ -15,8 +15,8 @@
 
 .Banner .imageHolder {
 	grid-area: imageHolder;
-
-
+	justify-self: end;
+	margin-right: 25%;
 
 	/*temp***********************************/
 /*	background: radial-gradient(circle farthest-corner at top left, red, blue);
@@ -60,5 +60,6 @@
 	background-color: yellow;
 	border-style: none;
 	border-radius:0.15rem;
+	font-size: 0.7rem;
 }
 

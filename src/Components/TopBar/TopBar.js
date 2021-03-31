@@ -8,15 +8,20 @@ import { Link } from 'react-router-dom';
 function TopBar() {
 	return (
 		<div className='TopBar'>
-			<Link>World's Fastest Online Shoppins Hub</Link>
-			<Link><PhoneIcon/>Hotline 01710111111</Link>
-			<Link>Advertise</Link>
-			<Link>Gift Card</Link>
-			<Link>Todays Deal</Link>
-			<Link>Help</Link>
-			<Link>Store Location</Link>
-			<Link>Track Your Order</Link>
-			<Link><img src={usFlag} alt="English" /> English</Link>
+			<div className="firstPart">
+				<Link>Fastest Online Shoppins Hub</Link>
+				<Link><PhoneIcon /><span>Hotline 01710111111</span></Link>
+			</div>
+			<div className="lastPart">
+				<Link>Gift Card</Link>
+				<Link>Todays Deal</Link>
+				<Link>Help</Link>
+				<Link>Store Location</Link>
+				<Link>Track Your Order</Link>
+				<Link><img src={usFlag} alt="English" /> <span>English</span></Link>
+				<Link to="/admin">Admin</Link>
+			</div>
+
 		</div>
 	)
 }

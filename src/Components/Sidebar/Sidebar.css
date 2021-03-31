@@ -1,0 +1,31 @@
+.Sidebar {
+	background: linear-gradient(to right, #462ca3, #462ca3);
+	display: grid;
+	grid-template-rows: 3rem auto;
+	grid-template-areas: 
+	'logo'
+	'menu';
+	height: 100vh;
+}
+
+.Sidebar img {
+	grid-area: logo;
+	width: 40%;
+}
+
+.Sidebar .menu {
+	grid-area: menu;
+	margin-top: 25%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.Sidebar .menu > * {
+	cursor: pointer;
+	text-decoration: none;
+	color: white;
+	font-size: 1rem;
+	margin-bottom: 10%;
+	font-weight: 400; 
+}

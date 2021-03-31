@@ -1,3 +1,13 @@
 .Home {
-	background-color: yellow;
+	
+}
+
+.Home .bannerCards {
+	position: relative;
+}
+
+.Home .bannerCards > *:nth-child(2) {
+	position: absolute;
+	top: 11.2rem;
+	z-index: 15;
 }
