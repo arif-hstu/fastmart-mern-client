@@ -22,6 +22,15 @@
 	grid-row: 4;
 }
 
+.ProductCard:hover {
+	cursor: pointer;
+	box-shadow: 0 0 3rem rgba(0,0,0,0.05);
+}
+
+.ProductCard:hover .highlighted{
+	color: #fa4f90;
+}
+
 .ProductCard > .priceCart {
 	grid-row: 5;
 	display: flex;
@@ -48,11 +57,14 @@
 .ProductCard > .priceCart > .cart > p:first-of-type{
 	grid-area: text1;
 	margin: 0;
+	font-size: 0.6rem;
 }
 
 .ProductCard > .priceCart > .cart > p:last-of-type{
 	grid-area: text2;
 	margin: 0;
+	font-size: 0.6rem;
+
 }
 
 

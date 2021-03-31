@@ -4,14 +4,32 @@
 
 	/*grid*/
 	display: grid;
-	grid-template-columns: 8% 1fr 8% 8% 8%;
-	justify-content: center;
+	grid-template-columns: 8% 1fr 4rem 3rem 8%;
 	align-items: center;
 }
 
 .SearchBar > *:first-child {
 	width: 2.9rem;
 }
+
+.SearchBar .cartIcon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.SearchBar .cartIcon p {
+	color: white;
+	background-color: #fa4e92;
+	padding:0 2.5px;
+	border-radius: 3px;
+	position: absolute;
+	right: 3px;
+	bottom: 3px;
+}
+
+
 
 .SearchBar > *:last-child {
 	font-size: 0.8rem;
@@ -21,4 +39,8 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.SearchBar > *:nth-child(3){
+	justify-self: center;
 }

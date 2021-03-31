@@ -1,3 +1,4 @@
+import React, { createContext, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios'
@@ -10,7 +11,10 @@ import {
   Route
 } from 'react-router-dom';
 
+export const CartContext = createContext();
+
 function App() {
+  const [cart, setCart] = useState([]);
   // const uploadImage = (img) => {
   //   let body = new FormData();
   //   body.set('key', '3fb15f7e29c33d97dda0bde24c302386')
@@ -52,6 +56,7 @@ function App() {
 
   return (
     <div className="App">
+    <CartContext.Provider value={[cart, setCart]}>
       <Router>
         <Switch>
           <Route exact path='/'>
@@ -62,6 +67,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
+      </CartContext.Provider>
     </div>
 
   );

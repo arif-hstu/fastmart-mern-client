@@ -1,20 +1,30 @@
-import React from 'react'
+import React, { useContext } from 'react';
+import { CartContext } from '../../App';
 import './ProductCard.css'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 function ProductCard({pd}) {
-	console.log(pd)
+	const [cart, setCart] = useContext(CartContext);
+	const addToCart = (e) => {
+		e.preventDefault();
+		if(e.target.parentNode.id || e.target.id){
+			const newCart = [...cart, e.target.parentNode.id || e.target.id];
+			setCart(newCart);
+		}
+	}
+
+	console.log(cart);
 	return (
-		<div className='ProductCard'>
+		<div onClick={addToCart} id={pd._id} className='ProductCard'>
 			<img src={pd.pdImage} alt="Product Image" />
-			<p><small>{pd.pdCatagory}</small></p>
+			<p id={pd._id}><small>{pd.pdCatagory}</small></p>
 			<h5>{pd.pdName}</h5>
-			<div className='priceCart'>
-				<h5>${pd.pdPrice}</h5>
-				<div className='cart'>
-					<ShoppingCartIcon style={{color:'#fa4f90'}}/>
-					<p>Add to</p>
-					<p>Cart</p>
+			<div className='priceCart' id={pd._id}>
+				<h5 className='highlighted'>${pd.pdPrice}</h5>
+				<div className='cart' id={pd._id}>
+					<ShoppingCartIcon id={pd._id} style={{color:'#fa4f90'}}/>
+					<p className='highlighted'>Add to</p>
+					<p className='highlighted'>Cart</p>
 				</div>
 			</div>
 

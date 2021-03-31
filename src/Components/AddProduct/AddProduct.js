@@ -50,6 +50,8 @@ function AddProduct() {
 
 	// process input data
 	const handleInputText = (e) => {
+		setSpinner(false);
+
 		let valid = false;
 		// if input is product name
 		if (e.target.name === 'pdName' || e.target.name === 'pdCatagory') {
@@ -97,6 +99,7 @@ function AddProduct() {
 
 	// remove error message
 	const removeError = () => {
+		setSpinner(false);
 		setError({});
 	}
 

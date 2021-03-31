@@ -14,6 +14,7 @@ function Home() {
 			.then(data => setAllProducts(data.data));
 	}, []);
 
+	console.log(allProducts);
 
 	return (
 		<div className='Home'>
