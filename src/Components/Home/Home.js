@@ -6,10 +6,6 @@ import CardHolder from '../CardHolder/CardHolder'
 import axios from 'axios'
 
 function Home() {
-	/***********************
-	* handle fetched data
-	* from the database
-	*************************/
 	// useState to hold the allProducts
 	const [allProducts, setAllProducts] = useState([]);
 	// fetch products by api

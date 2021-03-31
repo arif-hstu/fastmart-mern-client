@@ -1,11 +1,12 @@
 .Sidebar {
-	background: linear-gradient(to right, #462ca3, #462ca3);
+	background: linear-gradient(to right, #19103f, #19103f);
 	display: grid;
 	grid-template-rows: 3rem auto;
 	grid-template-areas: 
 	'logo'
 	'menu';
 	height: 100vh;
+
 }
 
 .Sidebar img {
@@ -14,6 +15,7 @@
 }
 
 .Sidebar .menu {
+	margin-left: 3vw;
 	grid-area: menu;
 	margin-top: 25%;
 	display: flex;
@@ -22,6 +24,10 @@
 }
 
 .Sidebar .menu > * {
+	padding-left: 1rem;
+	display: flex;
+	align-items: center;
+
 	cursor: pointer;
 	text-decoration: none;
 	color: white;

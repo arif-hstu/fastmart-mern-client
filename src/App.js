@@ -57,7 +57,7 @@ function App() {
           <Route exact path='/'>
             <Home />
           </Route>
-          <Route exact path='/admin'>
+          <Route exact path='/admin/:adminDestination'>
             <Admin />
           </Route>
         </Switch>

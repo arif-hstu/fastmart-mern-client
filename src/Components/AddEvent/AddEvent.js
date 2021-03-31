@@ -13,7 +13,7 @@ function AddEvent() {
 			<div className="part2">
 				<h5>Category</h5>
 				<input type="text" />
-				<h5>Banner</h5>
+				<h5>Image</h5>
 				<div className="imageUpload">
 					<input type="file" name="" id="" />
 				</div>

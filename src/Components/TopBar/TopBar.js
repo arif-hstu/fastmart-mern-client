@@ -19,7 +19,7 @@ function TopBar() {
 				<Link>Store Location</Link>
 				<Link>Track Your Order</Link>
 				<Link><img src={usFlag} alt="English" /> <span>English</span></Link>
-				<Link to="/admin">Admin</Link>
+				<Link to="/admin/addProduct">Admin</Link>
 			</div>
 
 		</div>
