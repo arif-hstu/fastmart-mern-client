@@ -1,10 +1,12 @@
 import React from 'react'
 import './Home.css'
-import '../../Banner/Banner'
+import Banner from '../Banner/Banner'
+import Header from '../Header/Header'
 
 function Home() {
 	return (
 		<div className='Home'>
+			<Header />
 			<Banner />
 		</div>
 	)

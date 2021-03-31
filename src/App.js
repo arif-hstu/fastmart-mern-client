@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios'
-import Header from './Components/Header/Header'
+import Home from './Components/Home/Home'
 import {
   BrowserRouter as Router,
   Switch,
@@ -52,9 +52,9 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Header />
         <Switch>
           <Route path='/'>
+          <Home />
           </Route>
         </Switch>
       </Router>

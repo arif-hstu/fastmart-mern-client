@@ -1,3 +1,64 @@
 .Banner {
-	background-color: brown;
+	background-color: #fbc95a;
+	background: linear-gradient(to right, #fccc5e, #f2a93c);
+	height: 10rem;
+	padding-bottom: 3rem;
+	/*grid*/
+	display: grid;
+	grid-template-columns: 0.7fr 1fr 1fr 0.7fr;
+	grid-template-rows: 10rem;
+	grid-template-areas: 
+	'. imageHolder infoHolder .';
+	justify-content: center;
+	align-items: center;
 }
+
+.Banner .imageHolder {
+	grid-area: imageHolder;
+
+
+
+	/*temp***********************************/
+/*	background: radial-gradient(circle farthest-corner at top left, red, blue);
+	mask-image: linear-gradient(to right, white, transparent);*/
+	/*clip-path: circle(30% at 50% 50%); */
+}
+
+.Banner .imageHolder > img {
+	width: 5rem;
+}
+
+.Banner .infoHolder {
+	grid-area: infoHolder;
+	text-align: left;
+}
+
+.Banner .infoHolder > * {
+	margin: 0;
+}
+
+.Banner .infoHolder p > span {
+	line-height: auto;
+	font-size: 0.6rem;
+	padding: 0.2rem;
+	border-radius: 0.2rem;
+	color: white;
+	background-color: #fa4e92;
+	width: 50%;
+}
+
+.Banner .infoHolder h4 {
+	margin-top: 2%;
+}
+
+.Banner .infoHolder h4, .Banner .infoHolder h3 {
+	color: white;
+}
+
+
+.Banner .infoHolder button {
+	background-color: yellow;
+	border-style: none;
+	border-radius:0.15rem;
+}
+
