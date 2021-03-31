@@ -1,7 +1,7 @@
 import React from 'react'
 import './Dashboard.css'
 import DashboardHeader from '../DashboardHeader/DashboardHeader'
-import AddEvent from '../AddEvent/AddEvent'
+import AddProduct from '../AddProduct/AddProduct'
 import ProductList from '../ProductList/ProductList'
 
 function Dashboard({ adminDestination }) {
@@ -10,7 +10,7 @@ function Dashboard({ adminDestination }) {
 		<div className='Dashboard'>
 			<DashboardHeader />
 			{
-				adminDestination === 'addProduct' && <AddEvent />
+				adminDestination === 'addProduct' && <AddProduct />
 			}
 			{
 				adminDestination === 'productList' && <ProductList />

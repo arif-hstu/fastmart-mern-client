@@ -1,4 +1,5 @@
-.AddEvent {
+.AddProduct {
+	height: 100%;
 	background-color: white;
 	border-radius: 1rem;
 	padding: 1.5rem;
@@ -7,38 +8,45 @@
 	grid-gap: 5%;
 	grid-template-areas: 
 	'part1 part1 part1 part2 part2 part2 '
+	'error error error error error error'
 	'. . button button . .';
 
 	margin-right: 2vw;
 }
 
 
-.AddEvent .part1> *, .AddEvent .part2 > * {
+.AddProduct .part1> *, .AddProduct .part2 > * {
 	width: 95%;
 	margin: 0;
 }
 
-.AddEvent .part1 input {
+.AddProduct .part1 input {
 	border: 1px solid #dedede;
 	height: 1.8rem;
 	border-radius: 0.4rem;
 }
 
-.AddEvent .part2 > *:nth-child(2) {
+.AddProduct .part2 > *:nth-child(2) {
 	border: 1px solid #dedede;
 	height: 1.8rem;
 	border-radius: 0.4rem;
 }
 
 
-.AddEvent .part1 {
+.AddProduct .part1 {
 	height: auto;
 	grid-area: part1;
 	display: flex;
 	flex-direction: column;
 }
 
-.AddEvent button {
+.AddProduct .generalError {
+	grid-area: error;
+	height: 0.5rem;
+	justify-self: center;
+}
+
+.AddProduct button {
 	margin-top: 15%;
 	grid-area: button;
 	margin-bottom: 12%;
@@ -50,23 +58,24 @@
 	padding-top: 0.5rem;
 }
 
-.AddEvent .part2 {
+.AddProduct .part2 {
 	grid-area: part2;
 }
 
-.AddEvent .part1 h5:last-of-type {
+.AddProduct .part1 h5:last-of-type {
 	margin-top: 2rem;
 }
 
-.AddEvent .part2 h5:last-of-type {
+.AddProduct .part2 h5:last-of-type {
 	margin-top: 2rem;
 }
 
-.AddEvent .part2 input::-webkit-file-upload-button{
+.AddProduct .part2 input::-webkit-file-upload-button{
 	visibility: hidden;
 }
 
-.AddEvent .part2 input::before {
+.AddProduct .part2 input::before {
+	width: 70%;
   content: 'Select an Image';
   color: #462ca3;
   display: inline-block;
@@ -82,20 +91,21 @@
   font-size: 8pt;
 }
 
-.AddEvent .part2 input:active::before {
+/*.AddProduct .part2 input:active::before {
   background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
-}
+}*/
 
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
-	.AddEvent {
+	.AddProduct {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-gap: 5%;
 		grid-template-areas: 
 		'part1 part1 part1' 
 		'part2 part2 part2 '
+		'error error error'
 		'. button .';
 	}
 }

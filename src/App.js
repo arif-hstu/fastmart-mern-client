@@ -11,17 +11,17 @@ import {
 } from 'react-router-dom';
 
 function App() {
-  const uploadImage = (img) => {
-    let body = new FormData();
-    body.set('key', '3fb15f7e29c33d97dda0bde24c302386')
-    body.append('image', img)
+  // const uploadImage = (img) => {
+  //   let body = new FormData();
+  //   body.set('key', '3fb15f7e29c33d97dda0bde24c302386')
+  //   body.append('image', img)
 
-    return axios({
-      method: 'post',
-      url: 'https://api.imgbb.com/1/upload',
-      data: body
-    })
-  };
+  //   return axios({
+  //     method: 'post',
+  //     url: 'https://api.imgbb.com/1/upload',
+  //     data: body
+  //   })
+  // };
 
 
 
