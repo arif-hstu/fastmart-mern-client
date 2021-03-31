@@ -1,0 +1,32 @@
+.NavBar {
+	background-color: tomato;
+
+	/*grid*/
+	display: grid;
+	grid-template-columns: repeat(14, 1fr);
+}
+
+.NavBar > *:first-child {
+	grid-column: 1/3;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.NavBar > *:first-child > *:last-child{
+	width: 15px;
+}
+
+.NavBar > * {
+	text-decoration: none;
+	color: black;
+	font-size: 0.7rem;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.NavBar > * > *:last-child {
+	width: 20%;
+}
