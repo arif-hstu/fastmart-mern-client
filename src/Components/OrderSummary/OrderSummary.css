@@ -1,10 +1,13 @@
 .OrderSummary {
 	position: relative;
 	display: grid;
-	grid-template-rows: 4rem 10% 20% 30% 20% 10%;  
+	grid-template-rows: 4rem 3rem 0.4fr 0.4fr 0.4fr 0.6fr 0.6fr 1.3rem 0.6fr;  
 	grid-template-areas: 
 	'heading'
 	'items'
+	'name'
+	'address'
+	'phone'
 	'shipping'
 	'promoCode'
 	'total'
@@ -19,7 +22,6 @@
 	top: 4rem;
 	right: auto;
 	z-index: 100;
-
 }
 
 
@@ -27,18 +29,72 @@
 	grid-area: heading;
 }
 
+.OrderSummary input{
+	margin: 0.4rem 0;
+	width: 95%;
+	border-style: none;
+	border: 1px solid #dedede;
+}
+
 .OrderSummary .items {
+	margin-top: 0.5rem;
+	font-size: 1.5rem;
 	grid-area: items;
 	display: flex;
 	justify-content: space-between;
 }
 
+.OrderSummary > * > *{
+	margin: 0;
+}
+
+
 .OrderSummary .shipping {
 	grid-area: shipping;
 }
 
+.OrderSummary .shipping h5 {
+	margin-bottom: 0.4rem;
+}
+
+
+.OrderSummary .name {
+	grid-area: name;
+}
+
+.OrderSummary .name input{
+	height: 2.8rem;
+}
+
+.OrderSummary .address {
+	grid-area: address;
+}
+
+.OrderSummary .address input{
+	height: 2.8rem;
+}
+
+.OrderSummary .phone {
+	grid-area: phone;
+}
+
+.OrderSummary .phone input{
+	height: 2.8rem;
+}
+
 .OrderSummary .promoCode {
 	grid-area: promoCode;
+}
+
+.OrderSummary .promoCode input{
+	height: 2.8rem;
+}
+
+.OrderSummary .promoCode button{
+	border-style: none;
+	background-color: #fa4e92;
+	padding: 0.5rem 1rem;
+	border-radius: 0.2rem;
 }
 
 .OrderSummary .total {
@@ -47,7 +103,13 @@
 	justify-content: space-between;
 }
 
-.OrderSummary .btn {
+.OrderSummary > *:last-child > *:first-child {
 	grid-area: button;
-	width: 40%;
+	width: 100%;
+	background-color: #7947e8;
+	border-style: none;
+	color: white;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	border-radius: 0.2rem;
 }

@@ -1,0 +1,149 @@
+.Modal{
+	position: absolute;
+	width: 80%;
+	height: 70vh;
+/*   top: 20rem;
+   left: 10rem;
+   right: 40px;
+   bottom: 40px;*/
+   background-color: white;
+   padding: 2rem;
+   border-radius: 1rem;
+   overflow-y: auto;
+}
+
+
+.Modal:focus {
+	outline: none;
+}
+
+.Modal button {
+	border-style: none;
+	border-radius: 0.3rem;
+	background-color: #7947e8;
+	color: white;
+	padding: 0.3rem 2rem;
+}
+
+.Overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.Modal .modalData {
+	position: relative;
+	display: grid;
+  	grid-template-rows: 2rem auto 2rem auto 4rem auto;
+  	grid-template-areas: 
+  	'mainHeadline'
+  	'orderDetails'
+  	'buyerInfo'
+  	'userDetails'
+  	'productsHeading'
+  	'listOfProducts';
+}
+
+.Modal .headline {
+	grid-column: mainHeadline;
+	background-color: #dee1e6;
+	align-self: center;
+	padding-left: 2rem;
+
+	line-height: 0.4rem;
+
+}
+
+.Modal .orderDetails, .Modal .userDetails  {
+	grid-column: orderDetails;
+	padding-top: 0.7rem;
+	padding-bottom: 0.7rem;
+	display: grid;
+	grid-template-columns: 0.7fr 1fr;
+}
+
+.Modal .orderDetails p, .Modal .userDetails p{
+	margin: 0;
+	margin-top: 0.2rem;
+}
+
+.Modal .orderDetails > *:first-child , .Modal .userDetails > *:first-child {
+	justify-self: end;
+	text-align: right;
+	margin-right: 1rem;
+}
+
+
+.Modal .buyerInformation {
+	grid-template-areas: buyerInfo;
+	background-color: #dee1e6;
+	align-self: center;
+	padding-left: 2rem;
+	line-height: 0.4rem;
+
+}
+
+/*.Modal .userDetails {
+	grid-template-areas: userDetails;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	display: grid;
+	grid-template-columns: 0.7fr 1fr;
+}*/
+
+/*
+.Modal .userDetails > *:first-child {
+	justify-self: end;
+	text-align: right;
+	margin-right: 1rem;
+}*/
+
+.Modal .productsHeading {
+	grid-template-areas: productsHeading;
+	background-color: #dee1e6;
+	align-self: center;
+	padding-left: 2rem;
+	line-height: 0.4rem;
+
+}
+
+.Modal .listOfProducts {
+	grid-template-areas: listOfProducts;
+}
+
+.Modal .listOfProducts .listHeading {
+	height: auto;
+	background-color: #dee1e6;
+	display: grid;
+	grid-template-columns: 3rem auto 7rem 7rem 7rem;
+}
+
+.Modal .listOfProducts .listProducts {
+	display: grid;
+	grid-template-columns: 3rem auto 7rem 7rem 7rem;
+}
+
+.Modal .listOfProducts .listHeading > *:first-child,
+.Modal .listOfProducts .listProducts > *:first-child {
+	justify-self: center;
+}
+
+.Modal .modalData .listOfProducts {
+	width: 100%;
+	z-index: 20;
+	border-bottom: 1px solid #dedede;
+}
+
+.Modal .mainTotal {
+	display: grid;
+	grid-template-columns: 3rem auto 7rem 7rem 7rem;
+}
+
+
+.Modal .mainTotal h5:first-of-type {
+	grid-column: 4;
+}
+

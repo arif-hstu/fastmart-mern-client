@@ -5,6 +5,7 @@ import axios from 'axios';
 import Home from './Components/Home/Home';
 import Admin from './Components/Admin/Admin';
 import CheckOut from './Components/CheckOut/CheckOut';
+import PlaceOrder from './Components/PlaceOrder/PlaceOrder';
 import {
   BrowserRouter as Router,
   Switch,
@@ -68,6 +69,9 @@ function App() {
           </Route>
           <Route exact path='/checkout'>
             <CheckOut />
+          </Route>
+          <Route exact path='/placeOrder'>
+            <PlaceOrder />
           </Route>
         </Switch>
       </Router>
