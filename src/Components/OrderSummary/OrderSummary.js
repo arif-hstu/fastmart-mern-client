@@ -1,5 +1,22 @@
 import React from 'react';
+import Select from 'react-select';
 import './OrderSummary.css';
+
+
+const locations = [
+    { label: 'Dhaka', value: '23.777176 90.399452' },
+    { label: 'Chittagong', value: '22.341900, 91.815536' },
+    { label: 'Sylhet', value: '24.886436 91.880722' },
+    { label: 'Rangpur', value: '25.74664 89.25166' },
+    { label: 'Jessore', value: '23.16971 89.21371' },
+    { label: 'Bogura', value: '24.8510 89.3711' },
+];
+
+
+const selectLocation = (value) =>  {
+	console.log(value)
+}
+
 
 function OrderSummary() {
 	return (
@@ -13,7 +30,10 @@ function OrderSummary() {
 			</div>
 			<div className="shipping">
 				<h5>SHIPPING</h5>
-				<input type="text" />
+				<Select
+                options={locations}
+                onChange={selectLocation}
+            />
 			</div>
 			<div className="promoCode">
 				<h5>PROMO CODE</h5>

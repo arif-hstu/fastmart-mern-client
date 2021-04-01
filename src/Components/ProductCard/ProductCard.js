@@ -13,7 +13,6 @@ function ProductCard({pd}) {
 		}
 	}
 
-	console.log(cart);
 	return (
 		<div onClick={addToCart} id={pd._id} className='ProductCard'>
 			<img src={pd.pdImage} alt="Product Image" />

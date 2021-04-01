@@ -1,3 +1,123 @@
+
 .CartItems {
+	position: relative;
+	margin-top: 0;
 	background-color: #fff;
+}
+
+.CartTitle {
+	height: 4rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+.CartTitle::after {
+	width: 100%;
+	content: '';
+	border-bottom: 1.5px solid #dedede;
+	position: absolute;
+	top: 4rem;
+	right: auto;
+	z-index: 100;
+
+}
+
+.CartItems p {
+	font-size: 0.8rem;
+}
+
+.CartItems .headline {
+	/*background-color: #e7eaed;*/
+	border-radius: 0.5rem;
+	width: 100%;
+	height: min-content;
+	display: grid;
+	grid-template-columns: 12rem 0.5fr 6rem 0.8fr 0.8fr;
+	justify-content: center;
+	align-items: center;
+}
+
+.CartItems .headline > *:nth-child(2){
+	grid-column: 3;
+}
+
+.CartItems .headline > *:nth-child(3){
+	justify-self:center;
+}
+
+.CartItems .items {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 12rem 0.5fr 6rem 0.8fr 0.8fr;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+
+
+.CartItems .items > *:nth-child(2){
+	grid-column: 3;
+}
+
+.CartItems .items > *:nth-child(3){
+	justify-self:center;
+}
+
+.CartItems .items .item {
+	display: grid;
+	grid-template-columns: 0.8fr 1fr;
+	justify-content: center;
+	align-items: center;
+}
+
+.CartItems .items .item > *, .CartItems .items .item .itemInfo > *{
+	margin: 0;
+}
+
+.CartItems .item .itemInfo {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.CartItems .items .item .itemInfo > p{
+	font-size: 0.6rem;
+	margin-top: 0.2rem;
+}
+
+
+.CartItems .items input {
+	border: 1px solid #dedede;
+	width: 80%;
+	height: 1rem;
+	font-size: 0.8rem;
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+.CartItems .items input::-webkit-outer-spin-button,
+.CartItems .items input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+.CartItems .items input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.CartItems .items img {
+	width: 3.5rem;
+}
+
+.CartItems .items .quantity {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.CartItems .items .quantity .plus, .CartItems .items .quantity .minus {
+	font-size: 1.5rem;
+	padding: 0 0.5rem;
 }

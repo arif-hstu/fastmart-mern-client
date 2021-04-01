@@ -1,4 +1,5 @@
 .OrderSummary {
+	position: relative;
 	display: grid;
 	grid-template-rows: 4rem 10% 20% 30% 20% 10%;  
 	grid-template-areas: 
@@ -9,6 +10,18 @@
 	'total'
 	'button';
 }
+
+.OrderSummary .heading::after {
+	width: 100%;
+	content: '';
+	border-bottom: 1.5px solid #dedede;
+	position: absolute;
+	top: 4rem;
+	right: auto;
+	z-index: 100;
+
+}
+
 
 .OrderSummary .heading {
 	grid-area: heading;
