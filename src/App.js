@@ -4,6 +4,7 @@ import './App.css';
 import axios from 'axios';
 import Home from './Components/Home/Home';
 import Admin from './Components/Admin/Admin';
+import Login from './Components/Login/Login';
 import CheckOut from './Components/CheckOut/CheckOut';
 import PlaceOrder from './Components/PlaceOrder/PlaceOrder';
 import {
@@ -14,9 +15,13 @@ import {
 } from 'react-router-dom';
 
 export const CartContext = createContext();
+export const UserContext = createContext();
 
 function App() {
   const [cart, setCart] = useState([]);
+  const [loggedInUser, setLoggedInUser] = useState({
+    displayName: 'Anonymous'
+  })
   // const uploadImage = (img) => {
   //   let body = new FormData();
   //   body.set('key', '3fb15f7e29c33d97dda0bde24c302386')
@@ -58,26 +63,30 @@ function App() {
 
   return (
     <div className="App">
-    <CartContext.Provider value={[cart, setCart]}>
-      <Router>
-        <Switch>
-          <Route exact path='/'>
-            <Home />
-          </Route>
-          <Route exact path='/admin/:adminDestination'>
-            <Admin />
-          </Route>
-          <Route exact path='/checkout'>
-            <CheckOut />
-          </Route>
-          <Route exact path='/placeOrder'>
-            <PlaceOrder />
-          </Route>
-        </Switch>
-      </Router>
+      <CartContext.Provider value={[cart, setCart]}>
+        <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+          <Router>
+            <Switch>
+              <Route exact path='/'>
+                <Home />
+              </Route>
+              <Route exact path='/admin/:adminDestination'>
+                <Admin />
+              </Route>
+              <Route exact path='/checkout'>
+                <CheckOut />
+              </Route>
+              <Route exact path='/placeOrder'>
+                <PlaceOrder />
+              </Route>
+              <Route exact path='/login'>
+                <Login />
+              </Route>
+            </Switch>
+          </Router>
+        </UserContext.Provider>
       </CartContext.Provider>
     </div>
-
   );
 }
 

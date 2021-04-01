@@ -95,6 +95,7 @@
 	background-color: #fa4e92;
 	padding: 0.5rem 1rem;
 	border-radius: 0.2rem;
+	cursor: pointer;
 }
 
 .OrderSummary .total {
@@ -112,4 +113,17 @@
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
 	border-radius: 0.2rem;
+}
+
+.OrderSummary > button {
+	grid-area: button;
+	height: 2.45rem;
+	width: 100%;
+	background-color: #b3b6ba;
+	border-style: none;
+	color: white;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	border-radius: 0.2rem;
+	cursor: pointer;
 }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { CartContext } from '../../App';
+import { CartContext, UserContext } from '../../App';
 import './CheckOut.css';
 import OrderSummary from '../OrderSummary/OrderSummary';
 import CartItems from '../CartItems/CartItems';
@@ -11,16 +11,13 @@ function CheckOut() {
 
 	// consume context from App
 	const [cart, setCart] = useContext(CartContext);
+	const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
 
 	// process products list 
 	// after getting from databse
 	const [fetchedProducts, setFetchedProducts] = useState([]);
 	const [selectedAllProducts, setSelectedAllProducts] = useState([]);
-	// const [productCounter, setProductCounter] = useState({
-	// 	productId:'',
-	// 	productCount: 0
-	// })
 
 	useEffect(() => {
 		const cartData = {

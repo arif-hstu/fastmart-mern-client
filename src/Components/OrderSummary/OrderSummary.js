@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { UserContext } from '../../App'
 import { Link } from 'react-router-dom';
 import Select from 'react-select';
 import './OrderSummary.css';
@@ -17,16 +18,83 @@ const selectLocation = (value) => {
 	console.log(value)
 }
 
-let tempTotalPrice = 0;
+let tempTotalPrice = 0; //for counting total price
+
 function OrderSummary({ selectedAllProducts }) {
+	const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+
+	const [error, setError] = useState('');
 	const [totalPrice, setTotalPrice] = useState(0);
+
 	useEffect(() => {
 		selectedAllProducts.map(pd => {
 			return tempTotalPrice += pd.pdPrice * pd.pdCount;
 		});
 		setTotalPrice(tempTotalPrice);
 
-	}, [selectedAllProducts])
+	}, [selectedAllProducts]);
+
+
+	// hanlde input data
+	// process input data
+	const handleInputText = (e) => {
+		let valid = false;
+
+		// add date to the user info state
+		const newDate = new Date();
+		const newUserInfo = {...loggedInUser};
+		newUserInfo.date = newDate;
+		setLoggedInUser(newUserInfo);
+
+		// if input is product name
+		if (e.target.name === 'address') {
+			const stringRegex = /[a-zA-Z]/;
+			valid = stringRegex.test(e.target.value)
+
+			if (valid) {
+				const newUserInfo = { ...loggedInUser };
+				newUserInfo[e.target.name] = e.target.value;
+				setLoggedInUser(newUserInfo);
+
+				valid = false;
+			} else {
+				const newUserInfo = { ...loggedInUser };
+				delete newUserInfo[e.target.name];
+				setLoggedInUser(newUserInfo);
+
+				setError({
+					error: e.target.name
+				});
+			}
+		}
+
+		// if input is phone number 
+		if (e.target.name === 'phone') {
+			const numberRegex = /^[0-9]+$/;
+			valid = numberRegex.test(e.target.value);
+
+			if (valid) {
+				const newUserInfo = { ...loggedInUser };
+				newUserInfo[e.target.name] = e.target.value;
+				setLoggedInUser(newUserInfo);
+
+				valid = false;
+			} else {
+				const newUserInfo = { ...loggedInUser };
+				delete newUserInfo[e.target.name];
+				setLoggedInUser(newUserInfo);
+
+				setError({
+					error: e.target.name
+				});
+			}
+		}
+	}
+
+	// handleCheckOut
+	const handleCheckOut = () => {
+		console.log('you clicked me;')
+	}
 
 	return (
 		<div className='OrderSummary'>
@@ -39,15 +107,15 @@ function OrderSummary({ selectedAllProducts }) {
 			</div>
 			<div className="name">
 				<h5>Your Name</h5>
-				<input type="text" placeholder='Your name'/>
+				<input value={loggedInUser.displayName} type="text" placeholder='Your name' />
 			</div>
 			<div className="address">
 				<h5>Address</h5>
-				<input type="text" placeholder='Your Address' />
+				<input onBlur={handleInputText} type="text" name='address' placeholder='Your Address' />
 			</div>
 			<div className="phone">
 				<h5>Phone Number</h5>
-				<input type="text" placeholder='Your Phone Number' />
+				<input onBlur={handleInputText} type="text" name='phone' placeholder='Your Phone Number' />
 			</div>
 			<div className="shipping">
 				<h5>SHIPPING</h5>
@@ -65,7 +133,14 @@ function OrderSummary({ selectedAllProducts }) {
 				<h5>TOTAL COST</h5>
 				<h5>৳{totalPrice}</h5>
 			</div>
-			<PlaceOrder totalPrice = {totalPrice} selectedAllProducts={selectedAllProducts} />
+			{
+				loggedInUser.displayName &&
+				loggedInUser.email &&
+				loggedInUser.address &&
+				loggedInUser.phone &&
+				<PlaceOrder totalPrice={totalPrice} selectedAllProducts={selectedAllProducts} /> ||
+				<button>Add Valid info to CheckOut</button>
+			}
 		</div>
 	)
 }

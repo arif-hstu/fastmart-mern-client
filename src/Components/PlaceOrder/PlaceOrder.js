@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { UserContext } from '../../App'
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import './PlaceOrder.css';
@@ -18,6 +19,9 @@ const customStyles = {
 Modal.setAppElement('#root')
 
 function PlaceOrder({ totalPrice, selectedAllProducts }) {
+	const [loggedInUser, setLoggeddInUser] = useContext(UserContext);
+
+
 	var subtitle;
 	const [modalIsOpen, setIsOpen] = React.useState(false);
 	function openModal() {
@@ -31,6 +35,22 @@ function PlaceOrder({ totalPrice, selectedAllProducts }) {
 
 	function closeModal() {
 		setIsOpen(false);
+	}
+
+	// placeOrder function to
+	// send info to the database
+	const placeOrder = () => {
+		fetch('http://localhost:5000/placeOrder', {
+			method: 'POST',
+			headers: {
+				'Content-type': 'application/json'
+			},
+			body: JSON.stringify(loggedInUser)
+		})
+		.then(res => res.json())
+		.then(data => {
+			console.log(data);
+		})
 	}
 
 	return (
@@ -62,7 +82,7 @@ function PlaceOrder({ totalPrice, selectedAllProducts }) {
 
 						<div className="value">
 							<p>Arif</p>
-							<p>Date</p>
+							<p>{loggedInUser.date}</p>
 							<p>4152rere</p>
 						</div>
 					</div>
@@ -79,10 +99,10 @@ function PlaceOrder({ totalPrice, selectedAllProducts }) {
 							<p>Address:</p>
 						</div>
 						<div className="value">
-							<p>Arif</p>
-							<p>arif@gamil.com</p>
-							<p>017100000</p>
-							<p>dhaka, bangladesh</p>
+							<p>{loggedInUser.displayName}</p>
+							<p>{loggedInUser.email}</p>
+							<p>{loggedInUser.phone}</p>
+							<p>{loggedInUser.address}</p>
 						</div>
 					</div>
 
@@ -116,7 +136,7 @@ function PlaceOrder({ totalPrice, selectedAllProducts }) {
 						<h5>TOTAL:</h5>
 						<h5>৳{totalPrice}</h5>
 					</div>
-					<button className="orderButton">
+					<button onClick={placeOrder} className="orderButton">
 						PlaceOrder
 					</button>
 				</div>
@@ -125,5 +145,5 @@ function PlaceOrder({ totalPrice, selectedAllProducts }) {
 	);
 }
 
-export default PlaceOrder;
+export default PlaceOrder; // to OrderSummary
 

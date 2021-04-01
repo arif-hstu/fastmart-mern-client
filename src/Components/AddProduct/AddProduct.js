@@ -126,11 +126,6 @@ function AddProduct() {
 		}
 	}
 
-
-	console.log('inputProduct', inputProduct);
-	console.log('error', error);
-
-
 	return (
 		<div className='AddProduct'>
 			<div className="part1">
