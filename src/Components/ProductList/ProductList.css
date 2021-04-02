@@ -18,13 +18,16 @@
 .ProductList .listItems img{
 	margin-top: 0;
 	width: 2rem;
-	/*clip-path: circle(50% at 50% 50%);*/
 }
 
 .ProductList .actionHolder {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.ProductList .actionHolder button {
+	border-style: none;
 }
 
 .ProductList > *:first-of-type{

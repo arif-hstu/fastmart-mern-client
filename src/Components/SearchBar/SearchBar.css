@@ -4,9 +4,12 @@
 
 	/*grid*/
 	display: grid;
-	width: 99.5vw;
+	width: 93vw;
 	grid-template-columns: 8% 1fr 4rem 3rem max-content;
 	align-items: center;
+
+	margin-left: 2rem;
+	margin-right: 2rem;
 }
 
 .SearchBar > *:first-child >*{
@@ -58,9 +61,24 @@
 @media only screen and (max-width: 600px) {
 	.SearchBar {
 	/*grid*/
-	width: 99.5vw;
+	width: 87vw;
 	display: grid;
-	grid-template-columns: 12% 0.8fr 4rem 3rem auto 4rem;
+	grid-template-columns: 15% 25% 4rem 3rem auto 4rem;
+	align-items: center;
+	}	
+
+	.SearchBar > *:last-child{
+	display: block;
+	justify-self: end;
+	}
+}
+
+@media (max-width: 320px) {
+	.SearchBar {
+	/*grid*/
+	width: 85vw;
+	display: grid;
+	grid-template-columns: 15% 30% 10% 10% auto 15%;
 	align-items: center;
 	}	
 

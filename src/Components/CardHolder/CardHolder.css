@@ -7,3 +7,25 @@
 }
 
 
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	.CardHolder {
+		grid-template-columns: repeat(3, minmax(6rem, 10rem));
+		grid-gap: 2.5rem;
+	}
+}
+
+@media (min-width: 321px) and (max-width: 480px) {
+   .CardHolder {
+		grid-template-columns: 10rem 10rem;
+		grid-gap: 2.5rem;
+	}
+}
+
+@media (max-width: 320px) {
+   .CardHolder {
+		grid-template-columns: 10rem;
+		grid-gap: 2.5rem;
+	}
+}

@@ -1,4 +1,5 @@
 .Banner {
+	width: 99.5vw;
 	background-color: #fbc95a;
 	background: linear-gradient(to right, #fccc5e, #f2a93c);
 	height: 10rem;
@@ -62,4 +63,10 @@
 	border-radius:0.15rem;
 	font-size: 0.7rem;
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+}
+
 

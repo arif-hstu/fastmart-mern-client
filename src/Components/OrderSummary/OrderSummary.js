@@ -115,7 +115,7 @@ function OrderSummary({ selectedAllProducts }) {
 	return (
 		<div className='OrderSummary'>
 			<div className="heading">
-				<h5>ORDER SUMMARY</h5>
+				<h3>ORDER SUMMARY</h3>
 			</div>
 			<div className="items">
 				<h5>ITEMS</h5>
@@ -154,6 +154,7 @@ function OrderSummary({ selectedAllProducts }) {
 				loggedInUser.email &&
 				loggedInUser.address &&
 				loggedInUser.phone &&
+				totalPrice > 0 &&
 				<PlaceOrder totalPrice={totalPrice} selectedAllProducts={selectedAllProducts} /> ||
 				<button>Add Valid info to CheckOut</button>
 			}

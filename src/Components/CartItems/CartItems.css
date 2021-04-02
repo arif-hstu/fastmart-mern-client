@@ -5,6 +5,11 @@
 	background-color: #fff;
 }
 
+
+.CartItems > * {
+	margin-left: 1.5rem;
+}
+
 .CartTitle {
 	height: 4rem;
 	display: flex;

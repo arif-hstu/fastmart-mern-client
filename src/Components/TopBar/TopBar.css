@@ -1,20 +1,11 @@
 .TopBar {
-	width: 99.5vw;
+	width: 97vw;
 	background-color: #3a19b0;
 	height: 1.6rem;
 	font-size: 75%;
 	position: relative;
 	padding-bottom: 0.3rem;
 
-	/*grid*/
-/*	display: grid;
-	grid-template-columns: repeat(13, 1fr);
-	justify-content: center;
-	align-items: center;*/
-
-
-
-	/*temp grid*/
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
 
@@ -25,8 +16,9 @@
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
-	margin-left: 0;
 	line-height: 100%;
+
+	margin-left: 2rem;
 }
 
 .TopBar .firstPart > *{
@@ -45,10 +37,10 @@
 
 .TopBar .lastPart{
 	grid-column: 4/7;
-
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
 }
 
 .TopBar .lastPart > *{

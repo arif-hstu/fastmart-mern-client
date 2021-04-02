@@ -12,7 +12,20 @@
 	'promoCode'
 	'total'
 	'button';
+
+	background-color: #e7eaed;
+	padding: 0 1rem;
 }
+
+.OrderSummary > * {
+	margin-right: 1rem;
+}
+
+.OrderSummary h5 {
+	font-size: 0.9rem;
+}
+
+
 
 .OrderSummary .heading::after {
 	width: 100%;
@@ -27,6 +40,9 @@
 
 .OrderSummary .heading {
 	grid-area: heading;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .OrderSummary input{
@@ -96,6 +112,7 @@
 	padding: 0.5rem 1rem;
 	border-radius: 0.2rem;
 	cursor: pointer;
+	color: white;
 }
 
 .OrderSummary .total {
@@ -116,6 +133,7 @@
 }
 
 .OrderSummary > button {
+	font-size: 0.85rem;
 	grid-area: button;
 	height: 2.45rem;
 	width: 100%;
@@ -126,4 +144,5 @@
 	padding-bottom: 0.5rem;
 	border-radius: 0.2rem;
 	cursor: pointer;
+	margin-right: 1rem;
 }
