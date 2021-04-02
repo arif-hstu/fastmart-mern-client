@@ -1,8 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { UserContext } from '../../App'
+import { useHistory } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import './PlaceOrder.css';
+
+
 
 const customStyles = {
 	content: {
@@ -15,12 +18,17 @@ const customStyles = {
 	}
 };
 
-// Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement('#root')
 
-function PlaceOrder({ totalPrice, selectedAllProducts }) {
-	const [loggedInUser, setLoggeddInUser] = useContext(UserContext);
 
+function PlaceOrder({ totalPrice, selectedAllProducts }) {
+
+	// useHistory hook to redirect from place order to trackOrder
+	const history = useHistory();
+	
+	const [loggedInUser, setLoggeddInUser] = useContext(UserContext);
+	const [spinner, setSpinner] = useState(false);
+	const [errorMessage, setErrorMessage] = useState(false);
 
 	var subtitle;
 	const [modalIsOpen, setIsOpen] = React.useState(false);
@@ -40,6 +48,9 @@ function PlaceOrder({ totalPrice, selectedAllProducts }) {
 	// placeOrder function to
 	// send info to the database
 	const placeOrder = () => {
+		setErrorMessage(false);
+		setSpinner(true);
+
 		fetch('http://localhost:5000/placeOrder', {
 			method: 'POST',
 			headers: {
@@ -47,11 +58,23 @@ function PlaceOrder({ totalPrice, selectedAllProducts }) {
 			},
 			body: JSON.stringify(loggedInUser)
 		})
-		.then(res => res.json())
-		.then(data => {
-			console.log(data);
-		})
+			.then(res => res.json())
+			.then(data => {
+				setSpinner(false);
+
+				// redirect to the trackOrder component
+				const path = 'trackOrder';
+				history.push(path);
+			})
+			.catch(err => {
+				setSpinner(false);
+				setErrorMessage(true);
+			})
 	}
+
+	useEffect(() => {
+		setErrorMessage(false)
+	}, [])
 
 	return (
 		<div className='PlaceOrder'>
@@ -76,14 +99,14 @@ function PlaceOrder({ totalPrice, selectedAllProducts }) {
 					<div className='orderDetails'>
 						<div className="property">
 							<p>Sales Consultants:</p>
-							<p>Warranty Certification:</p>
-							<p>Invoice:</p>
+							<p>Date:</p>
+							<p>Order ID:</p>
 						</div>
 
 						<div className="value">
 							<p>Arif</p>
 							<p>{loggedInUser.date}</p>
-							<p>4152rere</p>
+							<p>{loggedInUser.orderID}</p>
 						</div>
 					</div>
 
@@ -139,8 +162,25 @@ function PlaceOrder({ totalPrice, selectedAllProducts }) {
 					<button onClick={placeOrder} className="orderButton">
 						PlaceOrder
 					</button>
+					{
+						spinner &&
+						<p style={{
+							color: 'green',
+							margin: 'auto',
+							marginTop: '0.5rem'
+						}}>Your Request is being processed...</p>
+					}
+					{
+						errorMessage &&
+						<p style={{
+							color: 'red',
+							margin: 'auto',
+							marginTop: '0.5rem'
+						}}>An error occured! Please try again.</p>
+					}
 				</div>
 			</Modal>
+
 		</div>
 	);
 }

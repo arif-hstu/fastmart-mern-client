@@ -2,9 +2,10 @@ import React, { useState, useContext } from 'react'
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../App'
 import firebase from 'firebase';
-import 'firebase/auth'
+import 'firebase/auth';
+import firebaseConfig from './firebaseConfig'
 import './Login.css'
-import logo from '../../images/logo.png'
+import logo from '../../images/logo.png';
 
 function Login() {
 	const [loggedIn, setLoggedIn] = useState(false);
@@ -13,14 +14,7 @@ function Login() {
 	// const firebaseConfig = process.env.REACT_APP_FIREBASE_CONFIG;
 	// firebase initialization and functionality
 	if (!firebase.apps.length) {
-		firebase.initializeApp({
-			apiKey: "AIzaSyB83kYnTsPAP5sz-2N2d9csJIo5j07XMbg",
-			authDomain: "fast-mart.firebaseapp.com",
-			projectId: "fast-mart",
-			storageBucket: "fast-mart.appspot.com",
-			messagingSenderId: "946711079173",
-			appId: "1:946711079173:web:c2a53547738d144ae36f6c"
-		});
+		firebase.initializeApp(firebaseConfig);
 	} else {
 		firebase.app();
 	}

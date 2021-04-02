@@ -5,8 +5,10 @@ import axios from 'axios';
 import Home from './Components/Home/Home';
 import Admin from './Components/Admin/Admin';
 import Login from './Components/Login/Login';
+import TrackOrder from './Components/TrackOrder/TrackOrder';
 import CheckOut from './Components/CheckOut/CheckOut';
 import PlaceOrder from './Components/PlaceOrder/PlaceOrder';
+import ProcessInvoice from './Components/ProcessInvoice/ProcessInvoice';
 import {
   BrowserRouter as Router,
   Switch,
@@ -81,6 +83,12 @@ function App() {
               </Route>
               <Route exact path='/login'>
                 <Login />
+              </Route>
+              <Route exactp path='/processInvoice'>
+                <ProcessInvoice />
+              </Route>
+              <Route exactp path='/trackOrder'>
+                <TrackOrder />
               </Route>
             </Switch>
           </Router>

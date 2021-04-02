@@ -17,7 +17,7 @@ function TopBar() {
 				<Link>Todays Deal</Link>
 				<Link>Help</Link>
 				<Link>Store Location</Link>
-				<Link>Track Your Order</Link>
+				<Link to='/trackOrder'>Track Your Order</Link>
 				<Link><img src={usFlag} alt="English" /> <span>English</span></Link>
 				<Link to="/admin/addProduct">Admin</Link>
 			</div>

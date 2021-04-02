@@ -21,8 +21,8 @@ const selectLocation = (value) => {
 let tempTotalPrice = 0; //for counting total price
 
 function OrderSummary({ selectedAllProducts }) {
-	const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
+	const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 	const [error, setError] = useState('');
 	const [totalPrice, setTotalPrice] = useState(0);
 
@@ -39,12 +39,6 @@ function OrderSummary({ selectedAllProducts }) {
 	// process input data
 	const handleInputText = (e) => {
 		let valid = false;
-
-		// add date to the user info state
-		const newDate = new Date();
-		const newUserInfo = {...loggedInUser};
-		newUserInfo.date = newDate;
-		setLoggedInUser(newUserInfo);
 
 		// if input is product name
 		if (e.target.name === 'address') {
@@ -91,10 +85,29 @@ function OrderSummary({ selectedAllProducts }) {
 		}
 	}
 
-	// handleCheckOut
-	const handleCheckOut = () => {
-		console.log('you clicked me;')
-	}
+	const randomIdGenerator = () => {
+		return '_' + Math.random().toString(36).substr(2, 7);
+	};
+
+	// handle date of placing order 
+	useEffect(() => {
+
+		const orderID = randomIdGenerator();
+
+
+		// add date to the user info state
+		let today = new Date();
+		const dd = String(today.getDate()).padStart(2, '0');
+		const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+		const yyyy = today.getFullYear();
+
+		today = dd + '/' + mm + '/' + yyyy;
+
+		const newUserInfo = { ...loggedInUser };
+		newUserInfo.date = today;
+		newUserInfo.orderID = (dd + mm + orderID).toUpperCase();
+		setLoggedInUser(newUserInfo);
+	}, []);
 
 	return (
 		<div className='OrderSummary'>

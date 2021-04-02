@@ -8,7 +8,6 @@ function AddProduct() {
 	// handle INPUT PRODUCT to send to the database
 	const [inputProduct, setInputProduct] = useState({});
 	const [error, setError] = useState({});
-
 	const [spinner, setSpinner] = useState(false);
 
 
@@ -117,7 +116,9 @@ function AddProduct() {
 	const sendProductToDatabase = (e) => {
 		e.preventDefault();
 		if (inputProduct.pdName && inputProduct.pdPrice && inputProduct.pdCatagory && inputProduct.pdImage) {
-			console.log("You don't have error!")
+			
+			// send product to the database
+			
 		} else {
 			setError({
 				error: 'generalError'
