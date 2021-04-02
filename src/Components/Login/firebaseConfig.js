@@ -7,4 +7,4 @@ const firebaseConfig = {
 	appId: "1:946711079173:web:c2a53547738d144ae36f6c"
 }
 
-export default firebaseConfig;
+export default firebaseConfig;  //git ignored

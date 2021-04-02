@@ -10,8 +10,8 @@ function IndividualOrder({order}) {
 				<p>{order.displayName}</p>
 				<p>{order.email}</p>
 				<p>{order.address}</p>
-				<p>{order.phone}</p>
 				<p>{order.date}</p>
+				<p>{order.totalCost}</p>
 			</div>
 		</div>
 	)

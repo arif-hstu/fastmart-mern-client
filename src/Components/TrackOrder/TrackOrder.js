@@ -42,8 +42,8 @@ function TrackOrder() {
 					<p>Buyer Name</p>
 					<p>Email</p>
 					<p>Address</p>
-					<p>Phone</p>
 					<p>Date</p>
+					<p>Total Cost</p>
 				</div>
 				{
 					orders.length > 0 &&

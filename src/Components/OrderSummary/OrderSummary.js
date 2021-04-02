@@ -34,6 +34,10 @@ function OrderSummary({ selectedAllProducts }) {
 
 	}, [selectedAllProducts]);
 
+	useEffect(()=> {
+		loggedInUser.totalCost = totalPrice;
+	},[totalPrice]);
+
 
 	// hanlde input data
 	// process input data
@@ -93,7 +97,6 @@ function OrderSummary({ selectedAllProducts }) {
 	useEffect(() => {
 
 		const orderID = randomIdGenerator();
-
 
 		// add date to the user info state
 		let today = new Date();
