@@ -12,7 +12,7 @@ function TrackOrder() {
 
 	// get order data from the database
 	useEffect(() => {
-		fetch('http://localhost:5000/trackOrder', {
+		fetch('https://fastmart.herokuapp.com/trackOrder', {
 			method: 'POST',
 			headers: {
 				'Content-type': 'application/json'

@@ -118,7 +118,7 @@ function AddProduct() {
 		if (inputProduct.pdName && inputProduct.pdPrice && inputProduct.pdCatagory && inputProduct.pdImage) {
 
 			// send product to the database
-			fetch('http://localhost:5000/addProduct', {
+			fetch('https://fastmart.herokuapp.com/addProduct', {
 				method: 'POST',
 				headers: {
 					'Content-type': 'application/json'
@@ -133,8 +133,6 @@ function AddProduct() {
 			});
 		}
 	}
-
-	console.log(inputProduct, 'from addProduct************************************')
 
 	return (
 		<div className='AddProduct'>

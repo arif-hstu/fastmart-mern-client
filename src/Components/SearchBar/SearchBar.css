@@ -4,6 +4,7 @@
 
 	/*grid*/
 	display: grid;
+	width: 99.5vw;
 	grid-template-columns: 8% 1fr 4rem 3rem max-content;
 	align-items: center;
 }
@@ -29,9 +30,7 @@
 	bottom: 3px;
 }
 
-
-
-.SearchBar > *:last-child {
+.SearchBar > *:nth-child(5) {
 	font-size: 0.8rem;
 	font-weight: 600;
 	text-decoration: none;
@@ -43,4 +42,30 @@
 
 .SearchBar > *:nth-child(3){
 	justify-self: center;
+}
+
+
+.SearchBar > *:last-child{
+	display: none;
+	text-decoration: none;
+	color: white;
+		font-size: 0.8rem;
+	font-weight: 600
+;}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	.SearchBar {
+	/*grid*/
+	width: 99.5vw;
+	display: grid;
+	grid-template-columns: 12% 0.8fr 4rem 3rem auto 4rem;
+	align-items: center;
+	}	
+
+	.SearchBar > *:last-child{
+	display: block;
+	justify-self: end;
+	}
 }

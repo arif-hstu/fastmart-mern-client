@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import { UserContext } from '../../App'
 import firebase from 'firebase';
 import 'firebase/auth';
@@ -10,8 +10,7 @@ import logo from '../../images/logo.png';
 function Login() {
 	const [loggedIn, setLoggedIn] = useState(false);
 	const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-	
-	// const firebaseConfig = process.env.REACT_APP_FIREBASE_CONFIG;
+
 	// firebase initialization and functionality
 	if (!firebase.apps.length) {
 		firebase.initializeApp(firebaseConfig);
@@ -33,11 +32,12 @@ function Login() {
 				console.log(user);
 
 				// store user info in loggedInUser state 
-				const newUserInfo = {...loggedInUser};
+				const newUserInfo = { ...loggedInUser };
 				newUserInfo.displayName = user.displayName;
 				newUserInfo.email = user.email;
 				setLoggedInUser(newUserInfo);
 
+				history.replace(from);
 				// ...
 			}).catch((error) => {
 				// Handle Errors here.
@@ -49,9 +49,12 @@ function Login() {
 				var credential = error.credential;
 				// ...
 			});
-
-			console.log(loggedInUser, 'from loginjs')
 	}
+
+	// get data to redirect from login page
+	let history = useHistory();
+	let location = useLocation();
+	let { from } = location.state || { from: { pathname: "/" } };
 
 	return (
 		<>

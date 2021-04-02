@@ -3,6 +3,7 @@ import './Header.css'
 import TopBar from '../TopBar/TopBar'
 import NavBar from '../NavBar/NavBar'
 import SearchBar from '../SearchBar/SearchBar'
+
 function Header() {
 	return (
 		<div className='Header'>

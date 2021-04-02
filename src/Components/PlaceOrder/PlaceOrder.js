@@ -51,7 +51,7 @@ function PlaceOrder({ totalPrice, selectedAllProducts }) {
 		setErrorMessage(false);
 		setSpinner(true);
 
-		fetch('http://localhost:5000/placeOrder', {
+		fetch('https://fastmart.herokuapp.com/placeOrder', {
 			method: 'POST',
 			headers: {
 				'Content-type': 'application/json'

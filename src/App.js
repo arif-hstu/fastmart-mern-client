@@ -8,6 +8,7 @@ import Login from './Components/Login/Login';
 import TrackOrder from './Components/TrackOrder/TrackOrder';
 import CheckOut from './Components/CheckOut/CheckOut';
 import PlaceOrder from './Components/PlaceOrder/PlaceOrder';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute'
 import ProcessInvoice from './Components/ProcessInvoice/ProcessInvoice';
 import {
   BrowserRouter as Router,
@@ -15,6 +16,7 @@ import {
   Link,
   Route
 } from 'react-router-dom';
+
 
 export const CartContext = createContext();
 export const UserContext = createContext();
@@ -24,44 +26,6 @@ function App() {
   const [loggedInUser, setLoggedInUser] = useState({
     displayName: 'Anonymous'
   })
-  // const uploadImage = (img) => {
-  //   let body = new FormData();
-  //   body.set('key', '3fb15f7e29c33d97dda0bde24c302386')
-  //   body.append('image', img)
-
-  //   return axios({
-  //     method: 'post',
-  //     url: 'https://api.imgbb.com/1/upload',
-  //     data: body
-  //   })
-  // };
-
-
-
-  /*******************************
-  * this function is to upload image to the 
-  * imgbb database
-  ******************************/
-  // const handleImage = (e) => {
-  //   uploadImage(e.target.files[0])
-  //     .then(resp => {
-  //       console.log(resp.data.data)
-  //     })
-  // }
-
-  /*******************************
-  * This function is to send bulk data 
-  * to the database
-  ******************************/
-  // const handlePost = () => {
-  //   fetch('http://localhost:5000/addProducts', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-type': 'application/json'
-  //     },
-  //     body: JSON.stringify(allProducts)
-  //   })
-  // }
 
   return (
     <div className="App">
@@ -72,24 +36,24 @@ function App() {
               <Route exact path='/'>
                 <Home />
               </Route>
-              <Route exact path='/admin/:adminDestination'>
+              <PrivateRoute exact path='/admin/:adminDestination'>
                 <Admin />
-              </Route>
-              <Route exact path='/checkout'>
+              </PrivateRoute>
+              <PrivateRoute exact path='/checkout'>
                 <CheckOut />
-              </Route>
-              <Route exact path='/placeOrder'>
+              </PrivateRoute>
+              <PrivateRoute exact path='/placeOrder'>
                 <PlaceOrder />
-              </Route>
+              </PrivateRoute>
               <Route exact path='/login'>
                 <Login />
               </Route>
-              <Route exactp path='/processInvoice'>
+              <PrivateRoute exactp path='/processInvoice'>
                 <ProcessInvoice />
-              </Route>
-              <Route exactp path='/trackOrder'>
+              </PrivateRoute>
+              <PrivateRoute exactp path='/trackOrder'>
                 <TrackOrder />
-              </Route>
+              </PrivateRoute>
             </Switch>
           </Router>
         </UserContext.Provider>

@@ -28,7 +28,7 @@ function ProductList() {
 	const deleteProduct = (e) => {
 		if (e.target.parentNode.id || e.target.id) {
 
-			fetch('http://localhost:5000/deleteProduct', {
+			fetch('https://fastmart.herokuapp.com/deleteProduct', {
 				method: 'POST',
 				body: JSON.stringify({
 					deletedId: e.target.parentNode.id || e.target.id

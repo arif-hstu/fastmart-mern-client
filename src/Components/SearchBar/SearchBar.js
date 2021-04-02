@@ -27,6 +27,8 @@ function SearchBar() {
 				</p>
 			</div>
 			<Link to='/login'><PermIdentityIcon style={{ color: 'white' }} /><span className="loginInfo">{loggedInUser.email && loggedInUser.displayName || 'Login'}</span></Link>
+
+			<Link to="/admin/productList">Admin</Link>
 		</div>
 	)
 }
