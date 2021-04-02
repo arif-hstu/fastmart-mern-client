@@ -9,6 +9,7 @@ function AddProduct() {
 	const [inputProduct, setInputProduct] = useState({});
 	const [error, setError] = useState({});
 	const [spinner, setSpinner] = useState(false);
+	const [uploadMessage, setUploadMessage] = useState('');
 
 
 	// handle upload image to the imgbb api
@@ -49,6 +50,7 @@ function AddProduct() {
 
 	// process input data
 	const handleInputText = (e) => {
+		setUploadMessage('');
 		setSpinner(false);
 
 		let valid = false;
@@ -126,7 +128,7 @@ function AddProduct() {
 				body: JSON.stringify(inputProduct)
 			})
 				.then(res => res.json())
-				.then(data => console.log(data, 'Add Product 129'));
+				.then(data => setUploadMessage(data.response));
 		} else {
 			setError({
 				error: 'generalError'
@@ -177,6 +179,14 @@ function AddProduct() {
 					<p style={{
 						color: 'green'
 					}}>Uploading Image...
+					</p>
+				}
+
+				{
+					uploadMessage && 
+					<p style={{
+						color: 'green'
+					}}>{uploadMessage}
 					</p>
 				}
 			</div>

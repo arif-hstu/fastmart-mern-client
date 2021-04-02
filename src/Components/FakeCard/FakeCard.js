@@ -2,7 +2,6 @@ import React from 'react';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import './FakeCard.css';
 
-
 function FakeCard() {
 	return (
 		<div className='FakeCard'>

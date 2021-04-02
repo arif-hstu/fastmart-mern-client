@@ -29,7 +29,6 @@ function Login() {
 				var token = credential.accessToken;
 				// The signed-in user info.
 				var user = result.user;
-				console.log(user);
 
 				// store user info in loggedInUser state 
 				const newUserInfo = { ...loggedInUser };

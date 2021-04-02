@@ -15,7 +15,7 @@ const locations = [
 
 
 const selectLocation = (value) => {
-	console.log(value)
+	
 }
 
 let tempTotalPrice = 0; //for counting total price

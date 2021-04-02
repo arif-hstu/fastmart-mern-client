@@ -6,3 +6,26 @@
 	grid-gap: 2.5rem;
 	justify-content: center;
 }
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	.FakeHomeCard {
+		grid-template-columns: repeat(3, minmax(6rem, 10rem));
+		grid-gap: 2.5rem;
+	}
+}
+
+@media (min-width: 321px) and (max-width: 480px) {
+   .FakeHomeCard {
+		grid-template-columns: 10rem 10rem;
+		grid-gap: 2.5rem;
+	}
+}
+
+@media (max-width: 320px) {
+   .FakeHomeCard {
+		grid-template-columns: 10rem;
+		grid-gap: 2.5rem;
+	}
+}

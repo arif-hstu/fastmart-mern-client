@@ -9,6 +9,7 @@ import axios from 'axios'
 function Home() {
 	// useState to hold the allProducts
 	const [allProducts, setAllProducts] = useState([]);
+	
 	// fetch products by api
 	useEffect(() => {
 		axios('https://fastmart.herokuapp.com/allProducts')

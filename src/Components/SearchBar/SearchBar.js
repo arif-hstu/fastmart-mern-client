@@ -33,4 +33,4 @@ function SearchBar() {
 	)
 }
 
-export default SearchBar; // to header
+export default SearchBar; // to Header

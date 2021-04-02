@@ -26,8 +26,6 @@ function TrackOrder() {
 
 	}, [])
 
-	console.log(orders, 'from trackOrder')
-
 	return (
 		<>
 			<Header />
@@ -50,7 +48,6 @@ function TrackOrder() {
 					orders.map(ord => <IndividualOrder order={ord} />)
 				}
 			</div>
-
 		</>
 	)
 }

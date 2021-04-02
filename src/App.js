@@ -9,7 +9,6 @@ import TrackOrder from './Components/TrackOrder/TrackOrder';
 import CheckOut from './Components/CheckOut/CheckOut';
 import PlaceOrder from './Components/PlaceOrder/PlaceOrder';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute'
-import ProcessInvoice from './Components/ProcessInvoice/ProcessInvoice';
 import {
   BrowserRouter as Router,
   Switch,
@@ -48,9 +47,6 @@ function App() {
               <Route exact path='/login'>
                 <Login />
               </Route>
-              <PrivateRoute exactp path='/processInvoice'>
-                <ProcessInvoice />
-              </PrivateRoute>
               <PrivateRoute exactp path='/trackOrder'>
                 <TrackOrder />
               </PrivateRoute>

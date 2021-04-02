@@ -11,10 +11,6 @@ function ProductList() {
 		deletedId: ''
 	})
 
-	// useEffect(() => {
-
-	// })
-
 	// useState to hold the allProducts
 	const [allProducts, setAllProducts] = useState([]);
 	// fetch products by api
@@ -43,9 +39,11 @@ function ProductList() {
 					deletedId: e.target.parentNode.id || e.target.id
 				})
 			})
-			.then(data => console.log(data))
+			.then(data => {
+				//....
+			})
 			.catch(error => {
-
+				//....
 			})
 		}
 	}

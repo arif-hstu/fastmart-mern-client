@@ -5,8 +5,6 @@ import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import './PlaceOrder.css';
 
-
-
 const customStyles = {
 	content: {
 		top: '50%',

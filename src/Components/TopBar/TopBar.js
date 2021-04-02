@@ -21,7 +21,6 @@ function TopBar() {
 				<Link><img src={usFlag} alt="English" /> <span>English</span></Link>
 				<Link to="/admin/productList">Admin</Link>
 			</div>
-
 		</div>
 	)
 }
