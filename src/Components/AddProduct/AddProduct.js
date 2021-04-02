@@ -114,18 +114,27 @@ function AddProduct() {
 	* to the server
 	*******/
 	const sendProductToDatabase = (e) => {
-		e.preventDefault();
+		// e.preventDefault();
 		if (inputProduct.pdName && inputProduct.pdPrice && inputProduct.pdCatagory && inputProduct.pdImage) {
-			
+
 			// send product to the database
-			
+			fetch('http://localhost:5000/addProduct', {
+				method: 'POST',
+				headers: {
+					'Content-type': 'application/json'
+				},
+				body: JSON.stringify(inputProduct)
+			})
+				.then(res => res.json())
+				.then(data => console.log(data, 'Add Product 129'));
 		} else {
 			setError({
 				error: 'generalError'
 			});
-			console.log('You have an error!');
 		}
 	}
+
+	console.log(inputProduct, 'from addProduct************************************')
 
 	return (
 		<div className='AddProduct'>
@@ -166,7 +175,7 @@ function AddProduct() {
 				}
 
 				{
-					spinner && 
+					spinner &&
 					<p style={{
 						color: 'green'
 					}}>Uploading Image...

@@ -1,4 +1,5 @@
 .Sidebar {
+	/*position: fixed;*/
 	background: linear-gradient(to right, #19103f, #19103f);
 	display: grid;
 	grid-template-rows: 3rem auto;

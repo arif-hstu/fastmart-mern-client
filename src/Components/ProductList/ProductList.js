@@ -6,6 +6,14 @@ import BorderColorIcon from '@material-ui/icons/BorderColor';;
 
 
 function ProductList() {
+	// update list after deleting product 
+	const [deletedProduct, setDeletedProduct] = useState({
+		deletedId: ''
+	})
+
+	// useEffect(() => {
+
+	// })
 
 	// useState to hold the allProducts
 	const [allProducts, setAllProducts] = useState([]);
@@ -13,7 +21,34 @@ function ProductList() {
 	useEffect(() => {
 		axios('https://fastmart.herokuapp.com/allProducts')
 			.then(data => setAllProducts(data.data));
-	}, []);
+	}, [deletedProduct]);
+
+
+	// handle deleteProduct funtionality
+	const deleteProduct = (e) => {
+		if (e.target.parentNode.id || e.target.id) {
+
+			fetch('http://localhost:5000/deleteProduct', {
+				method: 'POST',
+				body: JSON.stringify({
+					deletedId: e.target.parentNode.id || e.target.id
+				}),
+				headers: {
+					'Content-type': 'application/json'
+				}
+			})
+			.then(res => {
+				res.json();
+				setDeletedProduct({
+					deletedId: e.target.parentNode.id || e.target.id
+				})
+			})
+			.then(data => console.log(data))
+			.catch(error => {
+
+			})
+		}
+	}
 
 	return (
 		<>
@@ -27,24 +62,27 @@ function ProductList() {
 				</div>
 				{
 					allProducts.map(pd => <>
-						<div className='listItems'>
+						<div id={pd._id} className='listItems'>
 							<p>{pd.pdName}</p>
 							<p>{pd.pdPrice}</p>
 							<p>{pd.pdCatagory}</p>
-							<p><img src={pd.pdImage} alt="Product"/></p>
-							<p>
+							<p><img src={pd.pdImage} alt="Product" /></p>
+							<div className='actionHolder'>
 								<BorderColorIcon style={{
-									color:"#fff", 
-									backgroundColor:"#3bc83b",
+									color: "#fff",
+									backgroundColor: "#3bc83b",
 									borderRadius: "0.2rem"
-								}}/>
-								<DeleteOutlineIcon style={{
-									color: "#fff", 
-									backgroundColor:"#ff4f55",
-									borderRadius: "0.2rem",
-									marginLeft: "0.4rem"
-								}}/>
-							</p>
+								}} />
+								<button id={pd._id} className="deleteIcon" onClick={deleteProduct}>
+									<DeleteOutlineIcon id={pd._id} style={{
+										color: "#fff",
+										backgroundColor: "#ff4f55",
+										borderRadius: "0.2rem",
+										marginLeft: "0.4rem",
+										cursor: 'pointer'
+									}} />
+								</button>
+							</div>
 						</div>
 					</>)
 				}

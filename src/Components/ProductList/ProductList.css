@@ -21,6 +21,11 @@
 	/*clip-path: circle(50% at 50% 50%);*/
 }
 
+.ProductList .actionHolder {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
 .ProductList > *:first-of-type{
 	font-weight: 600;
