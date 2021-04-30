@@ -31,7 +31,7 @@ The main use cases for this project, are:
 
 #### Core stack
 - [React](https://github.com/facebook/react)
-- [Font-Awesome](https://github.com/FortAwesome/Font-Awesome)
+- [Node](https://github.com/nodejs)
 - [Express](https://github.com/expressjs/express)
 - [MongoDB](https://github.com/mongodb/mongo)
 
