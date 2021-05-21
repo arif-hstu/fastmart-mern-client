@@ -1,7 +1,6 @@
 import React from 'react'
 import './TopBar.css'
 import PhoneIcon from '@material-ui/icons/Phone';
-import bdFlag from '../../../resources/icons/bdFlag.ico';
 import usFlag from '../../../resources/icons/usFlag.ico';
 import { Link } from 'react-router-dom';
 
@@ -10,7 +9,6 @@ function TopBar() {
 		<div className='TopBar'>
 			<div className="firstPart">
 				<Link>Fastest Online Shoppins Hub</Link>
-				<Link><PhoneIcon /><span>Hotline 01710111111</span></Link>
 			</div>
 			<div className="lastPart">
 				<Link>Gift Card</Link>

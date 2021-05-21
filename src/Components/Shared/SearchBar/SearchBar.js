@@ -16,9 +16,9 @@ function SearchBar() {
 	return (
 		<div className='SearchBar'>
 			<Link to='/'>
-				<img src={logo} alt="" />
+				<img src={logo} alt="FastMart" />
 			</Link>
-			<input type="button" value="" />
+			<input type="button" value="Search" />
 			<Link><FavoriteBorderOutlinedIcon style={{ color: 'white' }} /></Link>
 			<div className="cartIcon">
 				<Link to='/checkout'><ShoppingCartOutlinedIcon style={{ color: 'white' }} /></Link>
