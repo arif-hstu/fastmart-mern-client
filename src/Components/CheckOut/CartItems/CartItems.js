@@ -1,6 +1,6 @@
 import React from 'react';
 import './CartItems.css';
-import logo from '../../images/logo.png'
+import logo from '../../../resources/icons/logo.png';
 
 function CartItems(props) {
 	const [selectedAllProducts, setSelectedAllProducts] = props.selectedAllProducts;

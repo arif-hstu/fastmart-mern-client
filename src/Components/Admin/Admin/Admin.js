@@ -1,8 +1,8 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import './Admin.css'
-import Sidebar from '../Sidebar/Sidebar'
-import Dashboard from '../Dashboard/Dashboard'
+import Sidebar from '../../Shared/Sidebar/Sidebar'
+import Dashboard from '../../Shared/Dashboard/Dashboard'
 function Admin() {
 	// useParams for finding destination
 	const { adminDestination } = useParams();

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import './Sidebar.css'
-import logo from '../../images/logo.png'
+import logo from '../../../resources/icons/logo.png';
 import AddOutlinedIcon from '@material-ui/icons/AddOutlined';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 function Sidebar() {

@@ -1,6 +1,6 @@
-import React, { useContext } from 'react'
-import './DashboardHeader.css'
-import { UserContext } from '../../App'
+import React, { useContext } from 'react';
+import './DashboardHeader.css';
+import { UserContext } from '../../../App';
 
 function DashboardHeader() {
 

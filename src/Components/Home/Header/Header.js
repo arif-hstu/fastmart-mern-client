@@ -1,8 +1,8 @@
 import React from 'react'
 import './Header.css'
-import TopBar from '../TopBar/TopBar'
-import NavBar from '../NavBar/NavBar'
-import SearchBar from '../SearchBar/SearchBar'
+import TopBar from '../../Shared/TopBar/TopBar'
+import NavBar from '../../Shared/NavBar/NavBar'
+import SearchBar from '../../Shared/SearchBar/SearchBar'
 
 function Header() {
 	return (

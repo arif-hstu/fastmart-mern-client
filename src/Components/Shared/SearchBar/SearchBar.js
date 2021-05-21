@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import './SearchBar.css';
-import logo from '../../resources/icons/logo.png';
+import logo from '../../../resources/icons/logo.png';
 import { Link } from 'react-router-dom'
 import { CartContext, UserContext } from '../../../App'
 import FavoriteBorderOutlinedIcon from '@material-ui/icons/FavoriteBorderOutlined';

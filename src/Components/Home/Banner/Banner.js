@@ -1,6 +1,6 @@
 import React from 'react'
 import './Banner.css'
-import bannerWatch from '../../images/bannerWatch.png'
+import bannerWatch from '../../../resources/images/bannerWatch.png';
 
 function Banner() {
 	return (

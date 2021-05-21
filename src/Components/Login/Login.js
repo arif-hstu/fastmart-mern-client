@@ -5,7 +5,7 @@ import firebase from 'firebase';
 import 'firebase/auth';
 import firebaseConfig from './firebaseConfig'
 import './Login.css'
-import logo from '../../images/logo.png';
+import logo from '../../resources/icons/logo.png';
 
 function Login() {
 	const [loggedIn, setLoggedIn] = useState(false);

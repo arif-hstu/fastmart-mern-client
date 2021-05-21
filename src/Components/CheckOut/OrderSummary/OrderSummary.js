@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { UserContext } from '../../App'
+import { UserContext } from '../../../App'
 import { Link } from 'react-router-dom';
 import Select from 'react-select';
 import './OrderSummary.css';
-import PlaceOrder from '../PlaceOrder/PlaceOrder';
+import PlaceOrder from '../../PlaceOrder/PlaceOrder';
 
 
 const locations = [

@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { CartContext, UserContext } from '../../App';
+import { CartContext, UserContext } from '../../../App';
 import './CheckOut.css';
 import OrderSummary from '../OrderSummary/OrderSummary';
 import CartItems from '../CartItems/CartItems';
-import Header from '../Header/Header';
+import Header from '../../Home/Header/Header';
 import axios from 'axios';
 
 function CheckOut() {

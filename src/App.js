@@ -1,12 +1,11 @@
 import React, { createContext, useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
-import Home from './Components/Home/Home';
-import Admin from './Components/Admin/Admin';
+import Home from './Components/Home/Home/Home';
+import Admin from './Components/Admin/Admin/Admin';
 import Login from './Components/Login/Login';
-import TrackOrder from './Components/TrackOrder/TrackOrder';
-import CheckOut from './Components/CheckOut/CheckOut';
+import TrackOrder from './Components/TrackOrder/TrackOrder/TrackOrder';
+import CheckOut from './Components/CheckOut/CheckOut/CheckOut';
 import PlaceOrder from './Components/PlaceOrder/PlaceOrder';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute'
 import {

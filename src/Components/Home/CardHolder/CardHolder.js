@@ -1,6 +1,6 @@
-import React from 'react'
-import './CardHolder.css'
-import ProductCard from '../ProductCard/ProductCard'
+import React from 'react';
+import './CardHolder.css';
+import ProductCard from '../ProductCard/ProductCard';
 
 function CardHolder({allProducts}) {
 	return (

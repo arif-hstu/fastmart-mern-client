@@ -1,7 +1,7 @@
 import React, { useEffect, useContext, useState } from 'react';
 import './TrackOrder.css';
-import Header from '../Header/Header';
-import { UserContext } from '../../App'
+import Header from '../../Home/Header/Header';
+import { UserContext } from '../../../App'
 import IndividualOrder from '../IndividualOrder/IndividualOrder'
 
 function TrackOrder() {

@@ -1,8 +1,8 @@
 import React from 'react'
 import './TopBar.css'
 import PhoneIcon from '@material-ui/icons/Phone';
-import bdFlag from '../../images/bdFlag.ico';
-import usFlag from '../../images/usFlag.ico';
+import bdFlag from '../../../resources/icons/bdFlag.ico';
+import usFlag from '../../../resources/icons/usFlag.ico';
 import { Link } from 'react-router-dom';
 
 function TopBar() {
