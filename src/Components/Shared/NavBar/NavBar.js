@@ -16,12 +16,6 @@ function NavBar() {
 			<Link>Electronics
 				<ArrowDropDownIcon style={{ color: 'black' }} />
 			</Link>
-			<Link>Mobile
-				<ArrowDropDownIcon style={{ color: 'black' }} />
-			</Link>
-			<Link>Computer
-				<ArrowDropDownIcon style={{ color: 'black' }} />
-			</Link>
 			<Link>Books
 				<ArrowDropDownIcon style={{ color: 'black' }} />
 			</Link>

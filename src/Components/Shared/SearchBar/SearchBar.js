@@ -18,7 +18,7 @@ function SearchBar() {
 			<Link to='/'>
 				<img src={logo} alt="FastMart" />
 			</Link>
-			<input type="button" value="Search" />
+			<input type="button" value="" />
 			<Link><FavoriteBorderOutlinedIcon style={{ color: 'white' }} /></Link>
 			<div className="cartIcon">
 				<Link to='/checkout'><ShoppingCartOutlinedIcon style={{ color: 'white' }} /></Link>
@@ -26,8 +26,7 @@ function SearchBar() {
 					{cart.length}
 				</p>
 			</div>
-			<Link to='/login'><PermIdentityIcon style={{ color: 'white' }} /><span className="loginInfo">{loggedInUser.email && loggedInUser.displayName || 'Login'}</span></Link>
-
+			<Link to='/login'><PermIdentityIcon style={{ color: 'white' }} /></Link>
 			<Link to="/admin/productList">Admin</Link>
 		</div>
 	)
