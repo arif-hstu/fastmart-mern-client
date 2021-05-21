@@ -1,19 +1,13 @@
 .NavBar {
 	background-color: white;
 	height: 1.7rem;
-
-	/*grid*/
+	width: 100vw;
 	display: grid;
-	grid-template-columns: repeat(14, 1fr);
-}
-
-.NavBar > * {
-	margin-left: 0.5rem;
-	margin-right: 0.5rem;
+	grid-template-columns: repeat(9, 1fr);
 }
 
 .NavBar > *:first-child {
-	grid-column: 1/3;
+	width: 10rem;;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -29,14 +23,23 @@
 	font-size: 0.7rem;
 
 	display: flex;
-	justify-content: center;
+	justify-content: flex-end;
 	align-items: center;
 }
 
-.NavBar > * > *:last-child {
-	width: 20%;
+.NavBar > *:first-child {
+	justify-content: flex-start;
+	align-self: center;
+	margin-left: var(--margin);
 }
 
+.NavBar > *:last-child {
+	margin-right: var(--margin);
+}
+
+.NavBar > * > *:last-child {
+	width: 1.4rem;
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {

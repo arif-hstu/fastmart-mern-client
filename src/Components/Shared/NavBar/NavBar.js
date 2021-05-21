@@ -10,16 +10,13 @@ function NavBar() {
 			<Link><span>SEARCH BY CATEGORY</span>
 				<ArrowForwardIcon style={{ color: 'black' }} />
 			</Link>
-			<Link>Appliances
-				<ArrowDropDownIcon style={{ color: 'black' }} />
-			</Link>
 			<Link>Electronics
 				<ArrowDropDownIcon style={{ color: 'black' }} />
 			</Link>
 			<Link>Books
 				<ArrowDropDownIcon style={{ color: 'black' }} />
 			</Link>
-			<Link>Home & Kitchen
+			<Link>Home
 				<ArrowDropDownIcon style={{ color: 'black' }} />
 			</Link>
 			<Link>Man
@@ -32,9 +29,6 @@ function NavBar() {
 				<ArrowDropDownIcon style={{ color: 'black' }} />
 			</Link>
 			<Link>Beauty
-				<ArrowDropDownIcon style={{ color: 'black' }} />
-			</Link>
-			<Link>Sports
 				<ArrowDropDownIcon style={{ color: 'black' }} />
 			</Link>
 			<Link>Fitness
