@@ -36,7 +36,7 @@
 @media only screen and (max-width: 1024px)  {
     .OfferProducts {
         grid-template-columns: repeat(4, 1fr);
-        margin-top: 22rem;
+        margin-top: 2.5rem;
     }
 
     .OfferProducts > *:nth-child(5) {
