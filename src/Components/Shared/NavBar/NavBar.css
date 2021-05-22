@@ -37,8 +37,8 @@
 	width: 1.4rem;
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+/* Extra small devices (phones, 768px and down) */
+@media only screen and (max-width: 768px) {
 	.NavBar {
 		display: none;
 	}

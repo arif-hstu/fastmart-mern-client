@@ -60,3 +60,10 @@
 .TopBar  img {
 	height: 1rem;
 }
+
+/* Extra small devices (phones, 768px and down) */
+@media only screen and (max-width: 768px) {
+	.TopBar {
+		display: none;
+	}
+}

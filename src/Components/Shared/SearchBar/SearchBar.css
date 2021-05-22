@@ -16,11 +16,18 @@
 	transform: translateY(2px);
 }
 
+.SearchBar > *:nth-child(3) {
+	justify-self: end;
+}
+
 .SearchBar .cartIcon {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	position: relative;
+	transform: translate(7px, 2px);
+	width: 4rem;
+	justify-self: end;
 }
 
 .SearchBar .cartIcon p {
@@ -31,6 +38,7 @@
 	position: absolute;
 	right: 3px;
 	bottom: 3px;
+	transform: translateY(2px);
 }
 
 .SearchBar > *:nth-child(5) {
@@ -57,30 +65,43 @@
 ;}
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
 	.SearchBar > *:first-child > * {
 		width: 3.5rem;
 	}
 	.SearchBar {
-	/*grid*/
-	display: grid;
-	grid-template-columns: 15% 25% 4rem 3rem auto 4rem;
-	align-items: center;
+		/*grid*/
+		display: grid;
+		grid-template-columns: 20% auto 3rem 3rem 3rem max-content;
+		align-items: center;
 	}	
 
 	.SearchBar > *:last-child{
-	display: block;
-	justify-self: end;
+		display: block;
+		justify-self: end;
 	}
+}
+
+@media (max-width: 425px) {
+	.SearchBar > *:nth-child(2){
+		display: none;
+	}
+
+	.SearchBar {
+		/*grid*/
+		display: grid;
+		grid-template-columns: 22% auto 3rem 3rem 3rem max-content;
+		align-items: center;
+	}	
 }
 
 @media (max-width: 320px) {
 	.SearchBar {
-	/*grid*/
-	width: 85vw;
-	display: grid;
-	grid-template-columns: 15% 30% 10% 10% auto 15%;
-	align-items: center;
+		/*grid*/
+		width: 85vw;
+		display: grid;
+		grid-template-columns: 22% auto auto auto auto max-content;
+		align-items: center;
 	}	
 
 	.SearchBar > *:last-child{
