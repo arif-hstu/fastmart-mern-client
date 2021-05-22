@@ -9,7 +9,7 @@
 }
 
 .ProductList > *{
-	padding: 0 1rem;
+	padding: 1rem;
 	font-size: 0.8rem;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 0.7fr;

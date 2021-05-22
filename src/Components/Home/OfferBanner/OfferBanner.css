@@ -1,0 +1,23 @@
+.OfferBanner {
+	margin-left: var(--margin);
+	margin-right: var(--margin);
+	--doubleMargin: calc(var(--margin) * 2);
+	/*width: calc(100% - var(--doubleMargin) - 0.1rem);*/
+	margin-top: 4.2rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+.OfferBanner img{
+	height: 25vw;
+}
+
+@media only screen and (max-width: 1247px) {
+	.OfferBanner > *:last-child{
+		display: none;
+	}
+
+	.OfferBanner img{
+		height: 33vw;
+	}
+}

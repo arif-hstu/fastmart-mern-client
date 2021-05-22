@@ -3,7 +3,7 @@
 	height: 1.7rem;
 	width: 100vw;
 	display: grid;
-	grid-template-columns: repeat(9, 1fr);
+	grid-template-columns: repeat(10, 1fr);
 }
 
 .NavBar > *:first-child {
@@ -31,10 +31,6 @@
 	justify-content: flex-start;
 	align-self: center;
 	margin-left: var(--margin);
-}
-
-.NavBar > *:last-child {
-	margin-right: var(--margin);
 }
 
 .NavBar > * > *:last-child {

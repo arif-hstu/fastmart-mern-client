@@ -11,10 +11,9 @@ function ProductCard({ pd }) {
 		// transition: '0.01s'
 	}
 	const alteredStyle = {
-		transform: 'translateY(-100px) scale(2.5)',
+		transform: 'translateY(-100px) scale(1.5)',
 		opacity: '0',
 		transition: '1s'
-
 	}
 	const [animatedStyle, setAnimatedStyle] = useState(previousStyle);
 
@@ -35,7 +34,6 @@ function ProductCard({ pd }) {
 		}
 
 		setTimeout(function() { setAnimatedStyle(previousStyle) }, 1000);
-
 	}
 
 	return (
@@ -43,14 +41,16 @@ function ProductCard({ pd }) {
 			<div id={pd._id} className="imageHolder">
 				<img id={pd._id} src={pd.pdImage} alt="Product Image" />
 			</div>
-			<p id={pd._id}><small>{pd.pdCatagory}</small></p>
-			<h5>{pd.pdName}</h5>
-			<div className='priceCart' id={pd._id}>
-				<h5 className='highlighted'>${pd.pdPrice}</h5>
-				<div className='cart' id={pd._id}>
-					<ShoppingCartIcon style={animatedStyle} id={pd._id} />
-					<p className='highlighted'>Add to</p>
-					<p className='highlighted'>Cart</p>
+			<div className="infoHolder">
+				<p id={pd._id}><small>{pd.pdCatagory}</small></p>
+				<h5>{pd.pdName}</h5>
+				<div className='priceCart' id={pd._id}>
+					<h5 className='highlighted'>${pd.pdPrice}</h5>
+					<div className='cart' id={pd._id}>
+						<ShoppingCartIcon style={animatedStyle} id={pd._id} />
+						<p className='highlighted'>Add to</p>
+						<p className='highlighted'>Cart</p>
+					</div>
 				</div>
 			</div>
 		</div>

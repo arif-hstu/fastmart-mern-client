@@ -8,6 +8,7 @@ import FakeHomeCard from '../FakeHomeCard/FakeHomeCard';
 import OfferProducts from '../OfferProducts/OfferProducts';
 import KitchenProducts from '../KitchenProducts/KitchenProducts';
 import BooksProducts from '../BooksProducts/BooksProducts';
+import OfferBanner from '../OfferBanner/OfferBanner';
 import axios from 'axios'
 
 function Home() {
@@ -49,7 +50,7 @@ function Home() {
 					allProducts.length > 0 &&
 					<BooksProducts allProducts={allProducts} />
 				}
-
+				<OfferBanner />
 				{
 					allProducts.length === 0 && 
 					<FakeHomeCard />

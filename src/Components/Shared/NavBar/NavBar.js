@@ -31,9 +31,6 @@ function NavBar() {
 			<Link>Beauty
 				<ArrowDropDownIcon style={{ color: 'black' }} />
 			</Link>
-			<Link>Fitness
-				<ArrowDropDownIcon style={{ color: 'black' }} />
-			</Link>
 		</div>
 	)
 }

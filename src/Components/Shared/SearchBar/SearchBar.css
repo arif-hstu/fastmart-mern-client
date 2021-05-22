@@ -13,6 +13,7 @@
 
 .SearchBar > *:first-child > * {
 	width: 5rem;
+	transform: translateY(2px);
 }
 
 .SearchBar .cartIcon {
@@ -57,9 +58,11 @@
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+	.SearchBar > *:first-child > * {
+		width: 3.5rem;
+	}
 	.SearchBar {
 	/*grid*/
-	width: 87vw;
 	display: grid;
 	grid-template-columns: 15% 25% 4rem 3rem auto 4rem;
 	align-items: center;
