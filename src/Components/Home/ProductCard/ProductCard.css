@@ -1,30 +1,53 @@
 .ProductCard {
 	background-color: white;
 	border-radius: 0.5rem;
-	padding: 8%;
-	margin: -8%;
+	padding: 2vw;
+	height: 18rem;
+	width: 80%;
 	/*grid*/
-	display: grid;
-	grid-template-rows: 1rem 10rem 1rem 2rem 2rem;
+	display: flex;
+	flex-direction: column;
+}
+
+
+.ProductCard .imageHolder {
+	grid-row: 2;
+	height: 12rem;
+	margin: auto;
+	margin-bottom: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .ProductCard img {
-	grid-row: 2;
-	width: 70%;
-	margin: auto;
+	width: 100%;
 }
 
 .ProductCard > p {
+	margin-top: 50px;
 	grid-row: 3;
+	color: var(--primaryColor);
+	font-weight: 300;
+	font-size: var(--small);
 }
 
 .ProductCard > h5:first-of-type {
 	grid-row: 4;
+	width: 80%;
+	color: var(--gray);
+	font-weight: 400;
 }
 
 .ProductCard:hover {
 	cursor: pointer;
-	box-shadow: 0 0 3rem rgba(0,0,0,0.05);
+	box-shadow: 0 0 5rem rgba(0,0,0,0.08);
+	z-index: 555;
+}
+
+.ProductCard:hover 
+.ProductCard > .priceCart > .cart {
+	visibility: visible;
 }
 
 .ProductCard:hover .highlighted{
@@ -36,6 +59,11 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	color: black;
+}
+
+.ProductCard > .priceCart h5{
+	font-weight: 400;
 }
 
 .ProductCard > .priceCart > .cart {
@@ -64,9 +92,7 @@
 	grid-area: text2;
 	margin: 0;
 	font-size: 0.6rem;
-
 }
-
 
 .ProductCard > *:not(img) {
 	margin: 0;

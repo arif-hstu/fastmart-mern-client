@@ -24,7 +24,9 @@ function ProductCard({ pd }) {
 
 	return (
 		<div onClick={addToCart} id={pd._id} className='ProductCard'>
-			<img src={pd.pdImage} alt="Product Image" />
+			<div className="imageHolder">
+				<img src={pd.pdImage} alt="Product Image" />
+			</div>
 			<p id={pd._id}><small>{pd.pdCatagory}</small></p>
 			<h5>{pd.pdName}</h5>
 			<div className='priceCart' id={pd._id}>

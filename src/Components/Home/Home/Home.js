@@ -2,8 +2,12 @@ import React, { useEffect, useState } from 'react';
 import './Home.css';
 import Banner from '../Banner/Banner';
 import Header from '../Header/Header';
-import CardHolder from '../CardHolder/CardHolder';
+import LatestProducts from '../LatestProducts/LatestProducts';
+import DealsProducts from '../DealsProducts/DealsProducts';
 import FakeHomeCard from '../FakeHomeCard/FakeHomeCard';
+import OfferProducts from '../OfferProducts/OfferProducts';
+import KitchenProducts from '../KitchenProducts/KitchenProducts';
+import BooksProducts from '../BooksProducts/BooksProducts';
 import axios from 'axios'
 
 function Home() {
@@ -23,7 +27,27 @@ function Home() {
 				<Banner />
 				{
 					allProducts.length > 0 &&
-					<CardHolder allProducts={allProducts} />
+					<LatestProducts allProducts={allProducts} />
+				}
+
+				{
+					allProducts.length > 0 &&
+					<DealsProducts allProducts={allProducts} />
+				}
+
+				{
+					allProducts.length > 0 &&
+					<OfferProducts allProducts={allProducts} />
+				}
+
+				{
+					allProducts.length > 0 &&
+					<KitchenProducts allProducts={allProducts} />
+				}
+
+				{
+					allProducts.length > 0 &&
+					<BooksProducts allProducts={allProducts} />
 				}
 
 				{
