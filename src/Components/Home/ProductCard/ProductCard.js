@@ -8,12 +8,12 @@ function ProductCard({ pd }) {
 
 	const previousStyle = {
 		opacity: '1',
-		transition: '0.1s'
+		// transition: '0.01s'
 	}
 	const alteredStyle = {
-		transform: 'translateY(-50px)',
+		transform: 'translateY(-100px) scale(2.5)',
 		opacity: '0',
-		transition: '0.1s'
+		transition: '1s'
 
 	}
 	const [animatedStyle, setAnimatedStyle] = useState(previousStyle);
@@ -34,7 +34,7 @@ function ProductCard({ pd }) {
 			setLoggedInUser(newUserInfo);
 		}
 
-		setTimeout(function() { setAnimatedStyle(previousStyle) }, 300);
+		setTimeout(function() { setAnimatedStyle(previousStyle) }, 1000);
 
 	}
 
