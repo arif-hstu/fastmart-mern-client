@@ -1,0 +1,29 @@
+.Categories {
+	margin-top: 4rem;
+	margin-left: var(--margin);
+	margin-right: var(--margin);
+}
+
+.Categories h4{
+	text-align: center;
+}
+
+.Categories .iconHolder {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.Categories .iconHolder img {
+	width: 2.5rem;
+}
+
+.Categories .iconHolder > *{
+	text-align: center;
+	cursor: pointer;
+}
+
+.Categories .iconHolder h5 {
+	font-weight: 400;
+	color: var(--gray);
+}

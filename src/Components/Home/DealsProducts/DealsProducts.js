@@ -8,10 +8,10 @@ function DealsProducts({ allProducts }) {
 	return (
 		<div className='DealsProducts'>
 			<InfoCard title={'Deals of the Day'}/>
+			<ProductCard pd={allProducts[4]}/>
+			<ProductCard pd={allProducts[5]}/>
+			<ProductCard pd={allProducts[6]}/>
 			<ProductCard pd={allProducts[0]}/>
-			<ProductCard pd={allProducts[1]}/>
-			<ProductCard pd={allProducts[2]}/>
-			<ProductCard pd={allProducts[3]}/>
 		</div>
 	)
 }

@@ -6,6 +6,7 @@ import LatestProducts from '../LatestProducts/LatestProducts';
 import DealsProducts from '../DealsProducts/DealsProducts';
 import FakeHomeCard from '../FakeHomeCard/FakeHomeCard';
 import OfferProducts from '../OfferProducts/OfferProducts';
+import Categories from '../Categories/Categories';
 import KitchenProducts from '../KitchenProducts/KitchenProducts';
 import BooksProducts from '../BooksProducts/BooksProducts';
 import OfferBanner from '../OfferBanner/OfferBanner';
@@ -14,7 +15,7 @@ import axios from 'axios'
 function Home() {
 	// useState to hold the allProducts
 	const [allProducts, setAllProducts] = useState([]);
-	
+
 	// fetch products by api
 	useEffect(() => {
 		axios('https://fastmart.herokuapp.com/allProducts')
@@ -28,31 +29,18 @@ function Home() {
 				<Banner />
 				{
 					allProducts.length > 0 &&
-					<LatestProducts allProducts={allProducts} />
-				}
-
+					<>
+						<LatestProducts allProducts={allProducts} />
+						<DealsProducts allProducts={allProducts}/>
+						<OfferProducts allProducts={allProducts}/>
+						<KitchenProducts allProducts={allProducts}/>
+						<BooksProducts allProducts={allProducts}/>
+						<OfferBanner allProducts={allProducts}/>
+						<Categories />
+					</>
+				}				
 				{
-					allProducts.length > 0 &&
-					<DealsProducts allProducts={allProducts} />
-				}
-
-				{
-					allProducts.length > 0 &&
-					<OfferProducts allProducts={allProducts} />
-				}
-
-				{
-					allProducts.length > 0 &&
-					<KitchenProducts allProducts={allProducts} />
-				}
-
-				{
-					allProducts.length > 0 &&
-					<BooksProducts allProducts={allProducts} />
-				}
-				<OfferBanner />
-				{
-					allProducts.length === 0 && 
+					allProducts.length === 0 &&
 					<FakeHomeCard />
 				}
 			</div>

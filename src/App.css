@@ -24,3 +24,19 @@ body {
 	border-radius: 3px;
 	cursor: pointer;
 }
+
+.subtitle {
+  color: var(--gray);
+  font-weight: 400;
+  position: relative;
+}
+
+.subtitle::after {
+  content: '';
+  width: 20px;
+  bottom: -12px;
+  left: calc(50% - 10px);
+  position: absolute;
+  z-index: 555;
+  border-bottom: 3px solid var(--gray);
+}
