@@ -18,39 +18,43 @@ import {
 
 export const CartContext = createContext();
 export const UserContext = createContext();
+export const LocationContext = createContext();
 
 function App() {
   const [cart, setCart] = useState([]);
   const [loggedInUser, setLoggedInUser] = useState({
     displayName: 'Anonymous'
-  })
+  });
+  const [location, setLocation] = useState('book');
 
   return (
     <div className="App">
       <CartContext.Provider value={[cart, setCart]}>
         <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
-          <Router>
-            <Switch>
-              <Route exact path='/'>
-                <Home />
-              </Route>
-              <PrivateRoute exact path='/admin/:adminDestination'>
-                <Admin />
-              </PrivateRoute>
-              <PrivateRoute exact path='/checkout'>
-                <CheckOut />
-              </PrivateRoute>
-              <PrivateRoute exact path='/placeOrder'>
-                <PlaceOrder />
-              </PrivateRoute>
-              <Route exact path='/login'>
-                <Login />
-              </Route>
-              <PrivateRoute exactp path='/trackOrder'>
-                <TrackOrder />
-              </PrivateRoute>
-            </Switch>
-          </Router>
+          <LocationContext.Provider value={[location, setLocation]}>
+            <Router>
+              <Switch>
+                <Route exact path='/'>
+                  <Home />
+                </Route>
+                <PrivateRoute exact path='/admin/:adminDestination'>
+                  <Admin />
+                </PrivateRoute>
+                <PrivateRoute exact path='/checkout'>
+                  <CheckOut />
+                </PrivateRoute>
+                <PrivateRoute exact path='/placeOrder'>
+                  <PlaceOrder />
+                </PrivateRoute>
+                <Route exact path='/login'>
+                  <Login />
+                </Route>
+                <PrivateRoute exactp path='/trackOrder'>
+                  <TrackOrder />
+                </PrivateRoute>
+              </Switch>
+            </Router>
+          </LocationContext.Provider>
         </UserContext.Provider>
       </CartContext.Provider>
     </div>

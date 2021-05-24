@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 
+
+import { LocationContext } from '../../../App';
 import './Categories.css';
 import iconBooks from '../../../resources/icons/iconBook.svg';
 import bookHighlight from '../../../resources/icons/iconBookHighlight.svg';
@@ -22,6 +24,7 @@ function Categories() {
 	const iconSportsHighlight = sportsHighlight;
 	const iconElectronicsHighlight = electronicsHighlight;
 
+	const [location, setLocation] = useContext(LocationContext);
 	const history = useHistory();
 	const [icon, setIcon] = useState({ book: iconBookHighlight});
 
@@ -35,6 +38,7 @@ function Categories() {
 			[type]: eval(`icon${capitalType}Highlight`)
 		});
 		history.push(`/#${type}`);
+		setLocation(type);
 	}
 
 	return (

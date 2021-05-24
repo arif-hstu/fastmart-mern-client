@@ -7,6 +7,7 @@ import DealsProducts from '../DealsProducts/DealsProducts';
 import FakeHomeCard from '../FakeHomeCard/FakeHomeCard';
 import OfferProducts from '../OfferProducts/OfferProducts';
 import Categories from '../Categories/Categories';
+import CategoryDetails from '../CategoryDetails/CategoryDetails';
 import KitchenProducts from '../KitchenProducts/KitchenProducts';
 import BooksProducts from '../BooksProducts/BooksProducts';
 import OfferBanner from '../OfferBanner/OfferBanner';
@@ -37,6 +38,7 @@ function Home() {
 						<BooksProducts allProducts={allProducts}/>
 						<OfferBanner allProducts={allProducts}/>
 						<Categories />
+						<CategoryDetails />
 					</>
 				}				
 				{

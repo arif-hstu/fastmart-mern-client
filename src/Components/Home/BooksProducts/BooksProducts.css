@@ -10,15 +10,6 @@
     margin-top: 4.2rem;
 }
 
-.cardTitle {
-	font-weight: 100;
-	color: #6d6e73;
-	font-size: 25px;
-	text-align: center;
-    width: 60%;
-}
-
-
 @media only screen and (max-width: 1440px)  {
     .BooksProducts {
         grid-template-columns: repeat(4, 1fr);

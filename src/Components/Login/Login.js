@@ -5,7 +5,7 @@ import firebase from 'firebase';
 import 'firebase/auth';
 import firebaseConfig from './firebaseConfig'
 import './Login.css'
-import logo from '../../resources/icons/logo.png';
+import logo3 from '../../resources/icons/logo3.png';
 
 function Login() {
 	const [loggedIn, setLoggedIn] = useState(false);
@@ -61,7 +61,7 @@ function Login() {
 				!loggedIn &&
 				<div className='Login'>
 					<div className="logoHolder">
-						<Link to='/'><img src={logo} alt="" /></Link>
+						<Link to='/'><img src={logo3} alt="" /></Link>
 					</div>
 					<div className='registerHolder'>
 						<h4>Register and Explore!</h4>
@@ -75,7 +75,7 @@ function Login() {
 				loggedIn &&
 				<div className='Login'>
 					<div className="logoHolder">
-						<Link to='/'><img src={logo} alt="" /></Link>
+						<Link to='/'><img src={logo3} alt="" /></Link>
 					</div>
 					<div className='registerHolder'>
 						<h4>Login and Enjoy!</h4>
