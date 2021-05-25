@@ -37,6 +37,7 @@ body {
   color: var(--gray);
   font-weight: 400;
   position: relative;
+  text-align: center;
 }
 
 .subtitle::after {

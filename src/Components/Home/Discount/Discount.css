@@ -1,0 +1,21 @@
+.Discount {
+	display: flex;
+	justify-content: center;
+	border: 2px solid #e6e6e6;
+	padding: 5px;
+	cursor: pointer;
+}
+
+.Discount > *{
+	margin: 2px;
+	color: #3e3f41;
+}
+
+.Discount p {
+	font-weight: 200;
+}
+
+
+.Discount > *:last-child {
+	margin-top: auto;
+}

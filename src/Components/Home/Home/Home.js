@@ -11,6 +11,8 @@ import CategoryDetails from '../CategoryDetails/CategoryDetails';
 import KitchenProducts from '../KitchenProducts/KitchenProducts';
 import BooksProducts from '../BooksProducts/BooksProducts';
 import OfferBanner from '../OfferBanner/OfferBanner';
+import Discounts from '../Discounts/Discounts';
+import Brands from '../Brands/Brands';
 import axios from 'axios'
 
 function Home() {
@@ -39,6 +41,8 @@ function Home() {
 						<OfferBanner allProducts={allProducts}/>
 						<Categories />
 						<CategoryDetails />
+						<Discounts />
+						<Brands />
 					</>
 				}				
 				{

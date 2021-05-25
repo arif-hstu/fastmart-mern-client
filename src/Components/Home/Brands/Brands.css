@@ -1,0 +1,17 @@
+.Brands {
+	margin-left: var(--margin);
+	margin-right: var(--margin);
+}
+
+.Brands .brandHolder {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 1rem;
+}
+
+@media only screen and (max-width: 1024px){
+	.Brands .brandtHolder {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
