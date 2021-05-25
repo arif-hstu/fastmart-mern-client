@@ -25,7 +25,7 @@ function App() {
   const [loggedInUser, setLoggedInUser] = useState({
     displayName: 'Anonymous'
   });
-  const [location, setLocation] = useState('book');
+  const [location, setLocation] = useState('fitness');
 
   return (
     <div className="App">

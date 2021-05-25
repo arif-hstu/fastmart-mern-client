@@ -18,6 +18,10 @@
 	margin-top: 2rem;
 }
 
+.CategoryDetails .detailsHolder .bannerInfo p {
+	margin-bottom: 10px;
+}
+
 .CategoryDetails > *:first-child {
 	grid-area: firstPart;
 }
