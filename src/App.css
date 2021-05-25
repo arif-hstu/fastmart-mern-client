@@ -56,3 +56,19 @@ body {
   text-align: center;
   width: 60%;
 }
+
+.bannerTitle {
+  margin: 0;
+  width: 50%;
+  font-size: 30px;
+  font-weight: 300;
+  color: var(--gray);
+}
+
+.bannerSubtitle {
+  width: 50%;
+  margin: 0;
+  margin-bottom: 5px;
+  color: var(--gray);
+  font-weight: 500;
+}

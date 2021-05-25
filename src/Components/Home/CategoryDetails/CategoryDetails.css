@@ -6,6 +6,7 @@
 	grid-template-areas: 
 	'firstPart secondPart';
 	grid-column-gap: 2vw;
+	margin-bottom: 4rem;
 }
 
 .CategoryDetails .detailsHolder{
@@ -16,8 +17,6 @@
 .CategoryDetails .detailsHolder .bannerInfo .bannerSubtitle {
 	margin-top: 2rem;
 }
-
-
 
 .CategoryDetails > *:first-child {
 	grid-area: firstPart;
@@ -123,9 +122,25 @@
 		width: 100%;
 	}
 
-	.CategoryDetails .secondPart > *{
+	.CategoryDetails .secondPart {
 		--doubleMargin: calc(var(--margin) * 2);
 		width: calc(100vw - var(--doubleMargin));
-		background-color: red;
-}
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.CategoryDetails .secondPart img{
+		width: 95%;
+	}
+
+	.CategoryDetails .secondPart .first {
+		display: flex;
+		justify-content: flex-start;
+	}
+
+	.CategoryDetails .secondPart .second {
+		display: flex;
+		justify-content: flex-end;
+		margin: 0;
+	}	
 }

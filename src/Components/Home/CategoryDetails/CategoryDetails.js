@@ -10,6 +10,10 @@ import bannerSports from '../../../resources/images/banner/bannerSports.png';
 
 function CategoryDetails() {
 	const [location, setLocation] = useContext(LocationContext);
+	
+	useEffect(() => {
+
+	}, [location])
 
 	function capitalizeFirstLetter(string) {
 		return string.charAt(0).toUpperCase() + string.slice(1);
@@ -34,7 +38,7 @@ function CategoryDetails() {
 					</div>
 					<div className="bannerInfo">
 						<h5 className='bannerSubtitle'>TOP BRANDS</h5>
-						<h2 className='bannerTitle'>TOP BRANDS</h2>
+						<h2 className='bannerTitle'>{capitalizeFirstLetter(location).toUpperCase()} ITEMS</h2>
 						<p className='small'>Buy Top Brands {capitalizeFirstLetter(location)} Items from FastMart</p>
 					</div> 
 				</div>
