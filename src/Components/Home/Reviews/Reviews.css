@@ -1,0 +1,70 @@
+.Reviews {
+    margin-left: var(--margin);
+    margin-right: var(--margin);
+    margin-top: 4rem;
+    --doubleMargin: calc(var(--margin) * 2);
+    width: calc(100% - var(--doubleMargin) - 0.1rem);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas: 
+    'first second second third third';
+    border-radius: 5px;
+    box-shadow: 0 0 3rem rgba(0,0,0,0.05);
+    background-color: white;
+}
+
+.Reviews > *:first-child {
+    grid-area: first;
+}
+
+.Reviews > *:nth-child(2) {
+    grid-area: second;
+}
+
+.Reviews > *:nth-child(2)::after {
+    content: '';
+    height: 15rem;
+    top: 0;
+    right: 0;
+    border-right: 5px solid red;
+}
+
+.Reviews > *:nth-child(3) {
+    grid-area: third;
+}
+
+.cardTitle {
+    font-weight: 100;
+    color: #6d6e73;
+    font-size: 25px;
+    text-align: center;
+    width: 60%;
+}
+
+@media only screen and (max-width: 1440px)  {
+    .Reviews {
+    grid-template-columns: repeat(8, 1fr);
+            grid-template-areas: 
+    'first first second second second third third third';
+    }
+}
+
+@media only screen and (max-width: 1024px)  {
+    .Reviews {
+    grid-template-columns: repeat(6, 1fr);
+            grid-template-areas: 
+    'first first second second third third';
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .Reviews {
+    grid-template-columns: repeat(2, 1fr);
+            grid-template-areas: 
+    'first second';
+    }
+
+    .Reviews > *:nth-child(3) {
+        display: none;
+    }
+}

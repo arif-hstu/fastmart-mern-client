@@ -13,6 +13,7 @@ import BooksProducts from '../BooksProducts/BooksProducts';
 import OfferBanner from '../OfferBanner/OfferBanner';
 import Discounts from '../Discounts/Discounts';
 import Brands from '../Brands/Brands';
+import Reviews from '../Reviews/Reviews';
 import axios from 'axios'
 
 function Home() {
@@ -43,6 +44,7 @@ function Home() {
 						<CategoryDetails />
 						<Discounts />
 						<Brands />
+						<Reviews allProducts={allProducts}/>
 					</>
 				}				
 				{
