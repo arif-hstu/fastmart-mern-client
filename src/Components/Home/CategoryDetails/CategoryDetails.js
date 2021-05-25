@@ -21,21 +21,27 @@ function CategoryDetails() {
 
 	const [location, setLocation] = useContext(LocationContext);
 	const [categoryBanner, setCategoryBanner] = useState(bannerSunglass);
+	const [dataList, setDataList] = useState(fakeData.fitnessCategories);
 	useEffect(() => {
 		if (location === 'book') {
 			setCategoryBanner(bannerBook);
+			setDataList(fakeData.bookCategories);
 		}
 		if (location === 'electronics') {
 			setCategoryBanner(bannerWatch);
+			setDataList(fakeData.electronicsCategories);
 		}
 		if (location === 'fitness') {
 			setCategoryBanner(bannerSunglass);
+			setDataList(fakeData.fitnessCategories);
 		}
 		if (location === 'sports') {
 			setCategoryBanner(bannerSports);
+			setDataList(fakeData.sportsCategories);
 		}
 		if (location === 'furniture') {
 			setCategoryBanner(bannerFurniture);
+			setDataList(fakeData.furnitureCategories);
 		}
 	}, [categoryBanner, location])
 
@@ -55,7 +61,7 @@ function CategoryDetails() {
 						<div className="itemList">
 							<ul>
 								{
-									fakeData.fitnessCategories.map(data => <li className='listItems'>{data}</li>)
+									dataList.map(data => <li className='listItems'>{data}</li>)
 								}
 							</ul>
 						</div>

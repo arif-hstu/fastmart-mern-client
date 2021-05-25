@@ -26,7 +26,7 @@ function Categories() {
 
 	const [location, setLocation] = useContext(LocationContext);
 	const history = useHistory();
-	const [icon, setIcon] = useState({ book: iconBookHighlight});
+	const [icon, setIcon] = useState({ fitness: iconFitnessHighlight});
 
 	function capitalizeFirstLetter(string) {
 		return string.charAt(0).toUpperCase() + string.slice(1);
