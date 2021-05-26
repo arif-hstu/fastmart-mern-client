@@ -10,11 +10,31 @@
 
 .ReviewCard > * {
 	margin: 0;
+	color: #6d6e73;
+}
+
+.ReviewCard .reviewHolder {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .ReviewCard img {
+	margin-top: 5vw;
 	width: 3rem;
 	border-radius: 50%;
+}
+
+.ReviewCard p {
+	font-weight: 300;
+	font-size: 14px;
+}
+
+.ReviewCard h4 {
+	color: #3e3f41;
+	margin-top: auto;
+	margin-bottom: 
 }
 
 
