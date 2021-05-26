@@ -1,16 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import './ReviewCard.css';
-import fakeReviewData from './fakeReviewData';
-
-function ReviewCard({ pd }) {
-	const [reivewData, setReviewData] = useState([]);
-	useEffect(() => {
-		setReviewData(fakeReviewData);
-	}, [])
-
+function ReviewCard({ reivewData }) {
 	return (
 		<div className='ReviewCard'>
+			<img src={reivewData.img} alt="Avatar" />
+			<p>{reivewData.review}</p>
+			<h4>{reivewData.name}</h4>
+			<h6>{reivewData.designation}</h6>
 		</div>
 	)
 }

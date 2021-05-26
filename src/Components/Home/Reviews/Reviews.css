@@ -21,13 +21,6 @@
     grid-area: second;
 }
 
-.Reviews > *:nth-child(2)::after {
-    content: '';
-    height: 15rem;
-    top: 0;
-    right: 0;
-    border-right: 5px solid red;
-}
 
 .Reviews > *:nth-child(3) {
     grid-area: third;
