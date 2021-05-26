@@ -2,13 +2,24 @@
 	display: flex;
 	justify-content: center;
 	border: 2px solid #e6e6e6;
-	padding: 5px;
+	padding: 10px 5px;
 	cursor: pointer;
+	border-radius: 5px;
+	color: #3e3f41;
+}
+
+.Discount:hover {
+	border: 2px solid #fa4f90;
+	background-color: #fa4f90;
+	color: white;
+}
+
+.Discount:hover {
+	color: white;
 }
 
 .Discount > *{
 	margin: 2px;
-	color: #3e3f41;
 }
 
 .Discount p {
